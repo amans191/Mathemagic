@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { LoginPage } from "../login/login";
+import { ParentloginPage } from "../parentlogin/parentlogin";
+import { TeacherloginPage } from "../teacherlogin/teacherlogin";
+
 /**
  * Generated class for the StartPage page.
  *
@@ -20,6 +24,18 @@ export class StartPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad StartPage');
+  }
+
+  login() {
+    this.navCtrl.push(LoginPage);
+  }
+
+  parentlogin() {
+    this.navCtrl.push(ParentloginPage);
+  }
+
+  teacherlogin() {
+    this.navCtrl.push(TeacherloginPage);
   }
 
 }
