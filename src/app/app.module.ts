@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { TeacherloginPage } from "../pages/teacherlogin/teacherlogin";
 import { ParentloginPage } from "../pages/parentlogin/parentlogin";
 import { ParentsignupPage } from '../pages/parentsignup/parentsignup';
+import { Game1Page } from "../pages/game1/game1";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,7 +29,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     TeacherloginPage,
     ParentloginPage,
-    ParentsignupPage
+    ParentsignupPage,
+    Game1Page
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     TeacherloginPage,
     ParentloginPage,
-    ParentsignupPage
+    ParentsignupPage,
+    Game1Page
   ],
   providers: [
     StatusBar,
