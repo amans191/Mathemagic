@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { TabsPage } from "../tabs/tabs";
+import { ParentsignupPage } from "../parentsignup/parentsignup";
+
 /**
  * Generated class for the ParentloginPage page.
  *
@@ -20,6 +23,14 @@ export class ParentloginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ParentloginPage');
+  }
+
+  tabs() {
+    this.navCtrl.push(TabsPage);
+  }
+
+  parentsignup() {
+    this.navCtrl.push(ParentsignupPage);
   }
 
 }

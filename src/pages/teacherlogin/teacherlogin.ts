@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { TabsPage } from "../tabs/tabs";
+
 /**
  * Generated class for the TeacherloginPage page.
  *
@@ -20,6 +22,10 @@ export class TeacherloginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeacherloginPage');
+  }
+
+  tabs() {
+    this.navCtrl.push(TabsPage);
   }
 
 }
