@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {App, IonicPage, NavController, NavParams} from 'ionic-angular';
 
 import { StartPage } from "../start/start";
 
@@ -17,7 +17,7 @@ import { StartPage } from "../start/start";
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public app: App) {
   }
 
   ionViewDidLoad() {
@@ -25,6 +25,9 @@ export class SettingsPage {
   }
 
   start() {
-    this.navCtrl.push(StartPage);
+
+    //to ger rid of the tabs when you logout on the start page
+    const root = this.app.getRootNav();
+    root.popToRoot();
   }
 }

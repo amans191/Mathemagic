@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { TabsPage } from "../tabs/tabs";
+import { LoginPage } from "../login/login";
 
 /**
  * Generated class for the ParentsignupPage page.
@@ -26,6 +27,10 @@ export class ParentsignupPage {
 
   tabs() {
     this.navCtrl.push(TabsPage);
+  }
+
+  login() {
+    this.navCtrl.push(LoginPage);
   }
 
 }

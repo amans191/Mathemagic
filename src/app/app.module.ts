@@ -16,6 +16,7 @@ import { Game1Page } from "../pages/game1/game1";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthenticationServiceProvider
   ]
 })
 export class AppModule {}
