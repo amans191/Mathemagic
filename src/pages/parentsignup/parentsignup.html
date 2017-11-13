@@ -12,32 +12,32 @@
 
     <ion-item>
       <ion-label floating>First Name</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="parentData.parentFName"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Surname</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="parentData.parentSName"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Email</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="parentData.parentEmail"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Child ID</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="parentData.studentID"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Child Surname</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="parentData.studentSName"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="parentData.parentPassword"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -47,7 +47,7 @@
 
   </ion-list>
 
-  <button ion-button (click)="tabs()">Sign In</button><br>
+  <button ion-button (click)="parentsignup()">Sign In</button><br>
 
   <a href="#" (click)="login()">Loign Page</a>
 

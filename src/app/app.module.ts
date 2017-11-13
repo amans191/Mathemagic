@@ -17,6 +17,7 @@ import { Game1Page } from "../pages/game1/game1";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
+import { HttpModule } from "@angular/http";
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { AuthenticationServiceProvider } from '../providers/authentication-servi
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

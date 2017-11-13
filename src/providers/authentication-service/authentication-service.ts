@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { errorHandler } from "@angular/platform-browser/src/browser";
 
 let apiUrl = "http://localhost/PHP-Slim-Restful/api/"
 
@@ -20,7 +21,11 @@ export class AuthenticationServiceProvider {
   postData(creds, type){
     return new Promise((resolve, reject) => {
       let headers = new Headers();
-
-    })
+      this.http.post(apiUrl+type, JSON.stringify(creds), {headers: headers}).subscribe(res => {
+        resolve(res.json());
+      }, (err) => {
+        reject(err);
+      });
+    });
   }
 }
