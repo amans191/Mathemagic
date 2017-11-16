@@ -22,6 +22,7 @@ export class ParentsignupPage {
   responseData: any;
   parentData = {"parentFName":"", "parentSName":"", "parentEmail":"", "studentID":"", "studentSName":"", "parentPassword":""};
   constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider) {
+
   }
 
   ionViewDidLoad() {
