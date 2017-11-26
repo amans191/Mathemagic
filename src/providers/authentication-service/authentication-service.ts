@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { errorHandler } from "@angular/platform-browser/src/browser";
 
 let apiUrl = "http://localhost/PHP-Slim-Restful/api/"
 

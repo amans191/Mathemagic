@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { LoginPage } from "../login/login";
+import { StudentLoginPage } from "../StudentLogin/StudentLogin";
 import { ParentloginPage } from "../parentlogin/parentlogin";
 import { TeacherloginPage } from "../teacherlogin/teacherlogin";
 
@@ -27,7 +27,7 @@ export class StartPage {
   }
 
   login() {
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.push(StudentLoginPage);
   }
 
   parentlogin() {

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthenticationServiceProvider } from "../../providers/authentication-service/authentication-service";
 
-import { TabsPage } from "../tabs/tabs";
-import { LoginPage } from "../login/login";
+import { ParentTabsPage} from "../ParentTabs/ParentTabs";
+import { ParentloginPage } from "../parentlogin/parentlogin";
 
 /**
  * Generated class for the ParentsignupPage page.
@@ -36,14 +36,14 @@ export class ParentsignupPage {
 
       //to carry cache for local storage
       localStorage.setItem('parentData', JSON.stringify(this.responseData))
-      this.navCtrl.push(TabsPage);
+      this.navCtrl.push(ParentTabsPage);
     }, (err) => {
       console.log("Didn't work fool");
     });
   }
 
   login() {
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.push(ParentloginPage);
   }
 
 }

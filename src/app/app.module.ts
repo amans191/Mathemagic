@@ -3,16 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { SettingsPage } from "../pages/settings/settings";
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+import { StudentVideosPage } from '../pages/StudentVideos/StudentVideos';
+import { StudentSettignsPage } from "../pages/StudentSettigns/StudentSettigns";
+import { StudentHomePage } from '../pages/StudentHome/StudentHome';
+import { StudentTabsPage } from '../pages/StudentTabs/StudentTabs';
 import { StartPage } from '../pages/start/start';
-import { LoginPage } from '../pages/login/login';
+import { StudentLoginPage } from '../pages/StudentLogin/StudentLogin'
 import { TeacherloginPage } from "../pages/teacherlogin/teacherlogin";
 import { ParentloginPage } from "../pages/parentlogin/parentlogin";
 import { ParentsignupPage } from '../pages/parentsignup/parentsignup';
 import { Game1Page } from "../pages/game1/game1";
+import { ParentTabsPage } from "../pages/ParentTabs/ParentTabs";
+import { StudentprofilePage } from "../pages/studentprofile/studentprofile";
+import { ParenthomePage } from "../pages/parenthome/parenthome";
+import { ParentvideosPage } from "../pages/parentvideos/parentvideos";
+import { ParentsettingsPage } from "../pages/parentsettings/parentsettings";
+import { TeacherTabsPage } from "../pages/TeacherTabs/TeacherTabs";
+import { TeacherhomePage } from "../pages/teacherhome/teacherhome";
+import { TeachervideosPage } from "../pages/teachervideos/teachervideos";
+import { TeachermanagePage } from "../pages/teachermanage/teachermanage";
+import { TeachersettingsPage } from "../pages/teachersettings/teachersettings";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,16 +33,26 @@ import { HttpModule } from "@angular/http";
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    SettingsPage,
-    HomePage,
-    TabsPage,
+    StudentVideosPage,
+    StudentSettignsPage,
+    StudentHomePage,
+    StudentTabsPage,
     StartPage,
-    LoginPage,
+    StudentLoginPage,
     TeacherloginPage,
     ParentloginPage,
     ParentsignupPage,
-    Game1Page
+    Game1Page,
+    ParentTabsPage,
+    StudentprofilePage,
+    ParenthomePage,
+    ParentvideosPage,
+    ParentsettingsPage,
+    TeacherTabsPage,
+    TeacherhomePage,
+    TeachervideosPage,
+    TeachermanagePage,
+    TeachersettingsPage
   ],
   imports: [
     BrowserModule,
@@ -42,16 +62,26 @@ import { HttpModule } from "@angular/http";
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    SettingsPage,
-    HomePage,
-    TabsPage,
+    StudentVideosPage,
+    StudentSettignsPage,
+    StudentHomePage,
+    StudentTabsPage,
     StartPage,
-    LoginPage,
+    StudentLoginPage,
     TeacherloginPage,
     ParentloginPage,
     ParentsignupPage,
-    Game1Page
+    Game1Page,
+    ParentTabsPage,
+    StudentprofilePage,
+    ParenthomePage,
+    ParentvideosPage,
+    ParentsettingsPage,
+    TeacherTabsPage,
+    TeacherhomePage,
+    TeachervideosPage,
+    TeachermanagePage,
+    TeachersettingsPage
   ],
   providers: [
     StatusBar,
