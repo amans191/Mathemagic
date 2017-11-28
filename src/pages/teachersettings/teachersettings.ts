@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { App, IonicPage, NavController } from 'ionic-angular';
 
 /**
  * Generated class for the TeachersettingsPage page.
@@ -15,11 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TeachersettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public app: App) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeachersettingsPage');
   }
 
+  start() {
+
+    //to ger rid of the StudentTabs when you logout on the start page
+    const root = this.app.getRootNav();
+    root.popToRoot();
+  }
 }

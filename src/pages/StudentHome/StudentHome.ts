@@ -11,6 +11,7 @@ export class StudentHomePage {
 
   constructor(public navCtrl: NavController) {
 
+
   }
 
   game1() {

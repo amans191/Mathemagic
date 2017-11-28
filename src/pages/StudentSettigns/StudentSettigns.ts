@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import {App, IonicPage, NavController, NavParams} from 'ionic-angular';
-
-import { StartPage } from "../start/start";
+import { App, IonicPage, NavController } from 'ionic-angular';
 
 /**
  * Generated class for the SettingsPage page.

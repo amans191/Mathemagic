@@ -15,7 +15,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ParenthomePage {
 
+  public ParentDetails : any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    const data = JSON.parse(localStorage.getItem('parentData'));
+    this.ParentDetails = data.parentData;
+
   }
 
   ionViewDidLoad() {

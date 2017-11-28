@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { AuthenticationServiceProvider } from "../../providers/authentication-service/authentication-service";
 
 import { ParentTabsPage} from "../ParentTabs/ParentTabs";
 import { ParentloginPage } from "../parentlogin/parentlogin";
+
 
 /**
  * Generated class for the ParentsignupPage page.
@@ -21,7 +22,8 @@ export class ParentsignupPage {
 
   responseData: any;
   parentData = {"parentFName":"", "parentSName":"", "parentEmail":"", "studentID":"", "studentSName":"", "parentPassword":""};
-  constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider) {
+  constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
+              private toastCtrl: ToastController) {
 
   }
 
@@ -30,16 +32,31 @@ export class ParentsignupPage {
   }
 
   parentsignup() {
-    this.authenticationServiceProvider.postData(this.parentData, "parentSignup").then((result) => {
-      this.responseData = result;
-      console.log(this.responseData);
+    if (this.parentData.parentFName && this.parentData.parentSName && this.parentData.parentEmail &&
+      this.parentData.studentID && this.parentData.studentSName && this.parentData.parentPassword)
+    {
+      this.authenticationServiceProvider.postData(this.parentData, "parentSignup").then((result) => {
+        this.responseData = result;
+        console.log(this.responseData);
 
-      //to carry cache for local storage
-      localStorage.setItem('parentData', JSON.stringify(this.responseData))
-      this.navCtrl.push(ParentTabsPage);
-    }, (err) => {
-      console.log("Didn't work fool");
+
+      }, (err) => {
+        console.log("Didn't work fool");
+      });
+    }
+    else
+    {
+      this.presentToast("Invalid Email or password");
+    }
+
+  }
+
+  presentToast(message) {
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000
     });
+    toast.present();
   }
 
   login() {
