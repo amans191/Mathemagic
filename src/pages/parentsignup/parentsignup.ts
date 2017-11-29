@@ -39,6 +39,12 @@ export class ParentsignupPage {
         this.responseData = result;
         console.log(this.responseData);
 
+        if (this.responseData.parentData)
+        {
+          //to carry cache for local storage
+          localStorage.setItem('parentData', JSON.stringify(this.responseData))
+          this.navCtrl.push(ParentTabsPage);
+        }
 
       }, (err) => {
         console.log("Didn't work fool");
@@ -46,7 +52,7 @@ export class ParentsignupPage {
     }
     else
     {
-      this.presentToast("Invalid Email or password");
+      this.presentToast("Invalid Enter in Details, please enter again!");
     }
 
   }
