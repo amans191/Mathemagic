@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, ToastController} from 'ionic-angular';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { AuthenticationServiceProvider } from "../../providers/authentication-service/authentication-service";
 
 import { TeacherTabsPage } from "../TeacherTabs/TeacherTabs";
-import { TeacherregisterPage } from "../teacherregister/teacherregister";
-import {AuthenticationServiceProvider} from "../../providers/authentication-service/authentication-service";
+import { TeacherloginPage } from "../teacherlogin/teacherlogin";
 
 /**
- * Generated class for the TeacherloginPage page.
+ * Generated class for the TeacherregisterPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,10 +14,11 @@ import {AuthenticationServiceProvider} from "../../providers/authentication-serv
 
 @IonicPage()
 @Component({
-  selector: 'page-teacherlogin',
-  templateUrl: 'teacherlogin.html',
+  selector: 'page-teacherregister',
+  templateUrl: 'teacherregister.html',
 })
-export class TeacherloginPage {
+
+export class TeacherregisterPage {
 
   responseData: any;
   teacherData = {"teacherFName":"", "teacherSName":"", "email":"", "school":"", "teacherPassword":""};
@@ -27,13 +28,14 @@ export class TeacherloginPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TeacherloginPage');
+    console.log('ionViewDidLoad TeacherregisterPage');
   }
 
-  teachertabs() {
-    if (this.teacherData.email && this.teacherData.teacherPassword)
+  teachersignup() {
+    if (this.teacherData.teacherFName && this.teacherData.teacherSName && this.teacherData.email &&
+      this.teacherData.school && this.teacherData.teacherPassword)
     {
-      this.authenticationServiceProvider.postData(this.teacherData, "teacherLogin").then((result) => {
+      this.authenticationServiceProvider.postData(this.teacherData, "teacherRegister").then((result) => {
         this.responseData = result;
         console.log(this.responseData);
 
@@ -42,10 +44,6 @@ export class TeacherloginPage {
           //to carry cache for local storage
           localStorage.setItem('teacherData', JSON.stringify(this.responseData))
           this.navCtrl.push(TeacherTabsPage);
-        }
-        else
-        {
-          this.presentToast("Invalid Email or password");
         }
 
       }, (err) => {
@@ -56,6 +54,7 @@ export class TeacherloginPage {
     {
       this.presentToast("Invalid Enter in Details, please enter again!");
     }
+
   }
 
   presentToast(message) {
@@ -66,8 +65,8 @@ export class TeacherloginPage {
     toast.present();
   }
 
-
-  teacherregister() {
-    this.navCtrl.push(TeacherregisterPage);
+  login() {
+    this.navCtrl.push(TeacherloginPage);
   }
+
 }

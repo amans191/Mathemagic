@@ -23,6 +23,7 @@ import { TeacherhomePage } from "../pages/teacherhome/teacherhome";
 import { TeachervideosPage } from "../pages/teachervideos/teachervideos";
 import { TeachermanagePage } from "../pages/teachermanage/teachermanage";
 import { TeachersettingsPage } from "../pages/teachersettings/teachersettings";
+import { TeacherregisterPage } from "../pages/teacherregister/teacherregister";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -52,7 +53,8 @@ import { HttpModule } from "@angular/http";
     TeacherhomePage,
     TeachervideosPage,
     TeachermanagePage,
-    TeachersettingsPage
+    TeachersettingsPage,
+    TeacherregisterPage
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,8 @@ import { HttpModule } from "@angular/http";
     TeacherhomePage,
     TeachervideosPage,
     TeachermanagePage,
-    TeachersettingsPage
+    TeachersettingsPage,
+    TeacherregisterPage
   ],
   providers: [
     StatusBar,
