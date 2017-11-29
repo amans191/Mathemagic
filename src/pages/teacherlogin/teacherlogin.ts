@@ -45,7 +45,7 @@ export class TeacherloginPage {
         }
         else
         {
-          this.presentToast("Invalid Email or password");
+          this.presentToast("Invalid Email or password!");
         }
 
       }, (err) => {
