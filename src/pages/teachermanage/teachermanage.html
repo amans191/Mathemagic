@@ -7,12 +7,43 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>teachermanage</ion-title>
+    <ion-title>Manage</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding id="page">
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="studentData.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>First Name</ion-label>
+      <ion-input type="text" [(ngModel)]="studentData.studentFName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Surname</ion-label>
+      <ion-input type="text" [(ngModel)]="studentData.studentSName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="studentData.studentPassword"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Confrim Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button (click)="registerstudent()">Register Student</button><br>
 
 </ion-content>

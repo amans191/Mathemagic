@@ -85,5 +85,20 @@ $colors: (
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
-@import "noto-sans";
+//@import "roboto";
+//@import "noto-sans";
+
+@font-face {
+  font-family: "Comic Sans MS";
+  font-style: normal;
+  src: url('../assets/fonts/ComicSans.ttf');
+}
+
+$font-family-base: "Comic Sans MS";
+body{
+  font-family: "Comic Sans MS" !important;
+}
+
+h1, h2, h3, h4, h5, h6, button {
+  font-family: "Comic Sans MS" !important;
+}

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, ToastController} from 'ionic-angular';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import {AuthenticationServiceProvider} from "../../providers/authentication-service/authentication-service";
 
 import { TeacherTabsPage } from "../TeacherTabs/TeacherTabs";
 import { TeacherregisterPage } from "../teacherregister/teacherregister";
-import {AuthenticationServiceProvider} from "../../providers/authentication-service/authentication-service";
 
 /**
  * Generated class for the TeacherloginPage page.
@@ -21,9 +21,9 @@ export class TeacherloginPage {
 
   responseData: any;
   teacherData = {"teacherFName":"", "teacherSName":"", "email":"", "school":"", "teacherPassword":""};
+
   constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
               private toastCtrl: ToastController) {
-
   }
 
   ionViewDidLoad() {
@@ -43,10 +43,6 @@ export class TeacherloginPage {
           localStorage.setItem('teacherData', JSON.stringify(this.responseData))
           this.navCtrl.push(TeacherTabsPage);
         }
-        else
-        {
-          this.presentToast("Invalid Email or password!");
-        }
 
       }, (err) => {
         console.log("Didn't work fool");
@@ -54,8 +50,9 @@ export class TeacherloginPage {
     }
     else
     {
-      this.presentToast("Invalid Enter in Details, please enter again!");
+      this.presentToast("Invalid Details, please enter again!");
     }
+
   }
 
   presentToast(message) {
@@ -66,8 +63,8 @@ export class TeacherloginPage {
     toast.present();
   }
 
-
   teacherregister() {
     this.navCtrl.push(TeacherregisterPage);
   }
+
 }

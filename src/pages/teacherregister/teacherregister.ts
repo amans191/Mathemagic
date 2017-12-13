@@ -52,7 +52,7 @@ export class TeacherregisterPage {
     }
     else
     {
-      this.presentToast("Invalid Enter in Details, please enter again!");
+      this.presentToast("Invalid Details, please enter again!");
     }
 
   }
