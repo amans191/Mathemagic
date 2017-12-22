@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
+import {IonicPage, NavController, ToastController} from 'ionic-angular';
 
 import { StudentTabsPage } from "../StudentTabs/StudentTabs";
 import {AuthenticationServiceProvider} from "../../providers/authentication-service/authentication-service";

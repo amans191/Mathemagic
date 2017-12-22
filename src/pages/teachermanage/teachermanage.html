@@ -15,10 +15,12 @@
 
 <ion-content padding id="page">
 
+  <h3>Add Student</h3>
+
   <ion-list>
 
     <ion-item>
-      <ion-label floating>First Name</ion-label>
+      <ion-label floating>Username</ion-label>
       <ion-input type="text" [(ngModel)]="studentData.username"></ion-input>
     </ion-item>
 
@@ -45,5 +47,7 @@
   </ion-list>
 
   <button ion-button (click)="registerstudent()">Register Student</button><br>
+
+  <h3>Update Student</h3>
 
 </ion-content>
