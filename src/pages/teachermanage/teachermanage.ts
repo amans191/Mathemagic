@@ -15,10 +15,17 @@ import {AuthenticationServiceProvider} from "../../providers/authentication-serv
   templateUrl: 'teachermanage.html',
 })
 export class TeachermanagePage {
+
+  public StudentDetails : any;
+
   responseData: any;
   studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":""};
   constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
               private toastCtrl: ToastController) {
+
+    // const data = JSON.parse(localStorage.getItem('studentData'));
+    // this.StudentDetails = data.studentData;
+
 
   }
 
@@ -47,6 +54,10 @@ export class TeachermanagePage {
     {
       this.presentToast("Invalid Details, please enter again!");
     }
+
+  }
+
+  studentdeets() {
 
   }
 

@@ -40,7 +40,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-label floating>Confrim Password</ion-label>
+      <ion-label floating>Confirm Password</ion-label>
       <ion-input type="password"></ion-input>
     </ion-item>
 
@@ -50,10 +50,37 @@
 
   <h3>Update Student</h3>
 
+  <h6>Choose a student:</h6>
   <label class="item item-input item-select">
     <select class="input-label">
-      <option>aman</option>
+      <option (click)="studentdeets()" value="aman">aman</option>
+      <option (click)="studentdeets()" value="arsh">arsh</option>
     </select>
   </label>
+
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input type="text" [(ngModel)]="studentData.username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>First Name</ion-label>
+    <ion-input placeholder="" type="text" [(ngModel)]="studentData.studentFName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Surname</ion-label>
+    <ion-input type="text" [(ngModel)]="studentData.studentSName"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="studentData.studentPassword"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Confirm Password</ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
 
 </ion-content>
