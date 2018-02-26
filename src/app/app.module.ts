@@ -12,7 +12,6 @@ import { StudentLoginPage } from '../pages/StudentLogin/StudentLogin'
 import { TeacherloginPage } from "../pages/teacherlogin/teacherlogin";
 import { ParentloginPage } from "../pages/parentlogin/parentlogin";
 import { ParentsignupPage } from '../pages/parentsignup/parentsignup';
-import { Game1Page } from "../pages/game1/game1";
 import { ParentTabsPage } from "../pages/ParentTabs/ParentTabs";
 import { StudentprofilePage } from "../pages/studentprofile/studentprofile";
 import { ParenthomePage } from "../pages/parenthome/parenthome";
@@ -24,6 +23,7 @@ import { TeachervideosPage } from "../pages/teachervideos/teachervideos";
 import { TeachermanagePage } from "../pages/teachermanage/teachermanage";
 import { TeachersettingsPage } from "../pages/teachersettings/teachersettings";
 import { TeacherregisterPage } from "../pages/teacherregister/teacherregister";
+import { GameHomePage } from "../pages/GameHome/GameHome";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -43,7 +43,6 @@ import { HttpModule } from "@angular/http";
     TeacherloginPage,
     ParentloginPage,
     ParentsignupPage,
-    Game1Page,
     ParentTabsPage,
     StudentprofilePage,
     ParenthomePage,
@@ -54,7 +53,8 @@ import { HttpModule } from "@angular/http";
     TeachervideosPage,
     TeachermanagePage,
     TeachersettingsPage,
-    TeacherregisterPage
+    TeacherregisterPage,
+    GameHomePage
   ],
   imports: [
     BrowserModule,
@@ -73,7 +73,6 @@ import { HttpModule } from "@angular/http";
     TeacherloginPage,
     ParentloginPage,
     ParentsignupPage,
-    Game1Page,
     ParentTabsPage,
     StudentprofilePage,
     ParenthomePage,
@@ -84,7 +83,8 @@ import { HttpModule } from "@angular/http";
     TeachervideosPage,
     TeachermanagePage,
     TeachersettingsPage,
-    TeacherregisterPage
+    TeacherregisterPage,
+    GameHomePage
   ],
   providers: [
     StatusBar,
