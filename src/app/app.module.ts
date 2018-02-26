@@ -24,11 +24,14 @@ import { TeachermanagePage } from "../pages/teachermanage/teachermanage";
 import { TeachersettingsPage } from "../pages/teachersettings/teachersettings";
 import { TeacherregisterPage } from "../pages/teacherregister/teacherregister";
 import { GameHomePage } from "../pages/GameHome/GameHome";
+import { GamePage } from "../pages/game/game";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
 import { HttpModule } from "@angular/http";
+
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -54,11 +57,21 @@ import { HttpModule } from "@angular/http";
     TeachermanagePage,
     TeachersettingsPage,
     TeacherregisterPage,
-    GameHomePage
+    GameHomePage,
+    GamePage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    BrowserAnimationsModule,
+    IonicModule.forRoot(MyApp, {
+        backButtonText: 'Go Back',
+        iconMode: 'ios',
+        toastEnter: 'toast-md-slide-in',
+        toastLeave: 'toast-md-slide-out',
+        tabsPlacement: 'bottom',
+        pageTransition: 'ios-transition'
+      }
+    ),
     HttpModule
   ],
   bootstrap: [IonicApp],
@@ -84,8 +97,11 @@ import { HttpModule } from "@angular/http";
     TeachermanagePage,
     TeachersettingsPage,
     TeacherregisterPage,
-    GameHomePage
+    GameHomePage,
+    GamePage
+
   ],
+
   providers: [
     StatusBar,
     SplashScreen,
