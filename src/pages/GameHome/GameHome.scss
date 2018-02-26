@@ -1,3 +1,120 @@
-page-game-home {
+page-home {
+  #game {
+    canvas {
+      margin: 0 auto;
+    }
+  }
+  .footbg{
+    height: 40px;
+    background-color: blue; //rgba(255,255,1,1);
+  }
+  .badanswer{
+    color: red;
+  }
+  .certa{
+    color: #00CCCC;
+  }
+  #correct_ans {
+    font-family: 'Verdana';
+    font-size: 2.5em;
+    color: #41b0d4;
+    text-shadow: 4px 3px 5px #3e9a65;
+  }
+  .wrapper {
+    position: relative;
+  }
+  #quiz {
+    display: flex;
+    margin-top: 10%;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    // left: calc(100%/7);
+    width: 100%;
+  }
+
+  #level {
+    font-family: Verdana;
+    // letter-spacing: 0.1em;
+    font-size: 2em;
+    font-variant: small-caps;
+    font-weight: bolder;
+    color: #00CCCC;
+    background: rgba(1,121,232,0.1);
+    border-radius: 2em; // 2em 0 0;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    margin: 0.2em;
+  }
+
+  #sum {
+    font-family: comic;
+    font-size: 2.6em;
+    font-weight: bolder;
+    line-height: 1.2;
+    padding: 0.5em;
+    background: rgba(1,121,232,0.5);
+    border-radius: 0.6em; // 2em 0 0;
+    color: orange;
+  }
+
+  input {
+    font-family: comic;
+    text-align: center;
+    width: 1.5em;
+    font-size: 1.75em;
+    font-weight: bold;
+    line-height: 1.2;
+    color: yellow; //#bb00ff;
+    border: none;
+    border-bottom: 1px solid #00CCCC;
+    border-top: 1px solid #00CCCC;
+    border-left: 1px solid #00CCCC;
+    border-right: 1px solid #00CCCC;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: none;
+    outline: none;
+  }
+
+  #score {
+    align-self: center;
+    font-family: monospace;
+    font-size: 2.6em;
+    // font-weight: bolder;
+    // padding: 0.2em;
+    display: inline-block;
+    // text-shadow: 4px 3px 5px lightblue;
+    // background: rgba(5,255,2,0.5);
+    // transform: rotate(-10deg);
+    color: white;
+  }
+
+  .github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+  }
+  @keyframes octocat-wave {
+    0%, 100% {
+      transform: rotate(0)
+    }
+    20%,
+    60% {
+      transform: rotate(-25deg)
+    }
+    40%,
+    80% {
+      transform: rotate(10deg)
+    }
+  }
+  @media (max-width: 400px) {
+    .github-corner:hover .octo-arm {
+      animation: none
+    }
+    .github-corner .octo-arm {
+      animation: octocat-wave 560ms ease-in-out
+    }
+  }
 
 }
