@@ -99,7 +99,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     TeacherregisterPage,
     GameHomePage,
     GamePage
-
   ],
 
   providers: [

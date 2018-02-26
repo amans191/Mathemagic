@@ -12,8 +12,8 @@ import { ToastController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-GameHome',
+  templateUrl: 'GameHome.html',
   animations: [
     //Animation for the Quiz
     trigger('flyInOut', [
@@ -28,14 +28,13 @@ import { ToastController } from 'ionic-angular';
     ])
   ],
 })
-export class HomePage {
+export class GameHomePage {
   /**
    * Game instance
    * @private
    * @type {Game}
    * @memberof HomePage
    */
-  // private gameInstance: Game;
 
   /**
    * Creates an instance of HomePage.

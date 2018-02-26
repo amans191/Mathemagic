@@ -44,9 +44,14 @@
   "devDependencies": {
     "@angular/tsc-wrapped": "^4.4.6",
     "@ionic/app-scripts": "3.0.1",
-    "typescript": "^2.7.2"
+    "expose-loader": "^0.7.4",
+    "typescript": "^2.7.2",
+    "webpack-merge": "^4.1.2"
   },
   "description": "An Ionic project",
+  "config": {
+    "ionic_webpack": "./webpack.config.js"
+  },
   "cordova": {
     "plugins": {
       "ionic-plugin-keyboard": {},

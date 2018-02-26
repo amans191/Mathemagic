@@ -27,7 +27,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     ])
   ],
 })
-export class Game extends Phaser.Game {
+export class GamePage extends Phaser.Game {
   /**
    * Creates an instance of Game.
    * @memberof Game
