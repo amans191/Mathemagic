@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { QuizMakerPage } from "../quizmaker/quizmaker";
+
 /**
  * Generated class for the TeacherhomePage page.
  *
@@ -20,6 +22,10 @@ export class TeacherhomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeacherhomePage');
+  }
+
+  makequiz() {
+    this.navCtrl.push(QuizMakerPage);
   }
 
 }

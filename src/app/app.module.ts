@@ -25,6 +25,7 @@ import { TeachersettingsPage } from "../pages/teachersettings/teachersettings";
 import { TeacherregisterPage } from "../pages/teacherregister/teacherregister";
 import { GameHomePage } from "../pages/GameHome/GameHome";
 import { GamePage } from "../pages/game/game";
+import { QuizMakerPage } from "../pages/quizmaker/quizmaker";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -58,7 +59,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     TeachersettingsPage,
     TeacherregisterPage,
     GameHomePage,
-    GamePage
+    GamePage,
+    QuizMakerPage
   ],
   imports: [
     BrowserModule,
@@ -98,7 +100,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     TeachersettingsPage,
     TeacherregisterPage,
     GameHomePage,
-    GamePage
+    GamePage,
+    QuizMakerPage
   ],
 
   providers: [
