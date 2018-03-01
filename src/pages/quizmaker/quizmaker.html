@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>QuizMaker</ion-title>
+    <ion-title>Create A Quiz!</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,7 +15,28 @@
 
 <ion-content padding id="page">
 
-  <p>Enter Numbers and choose an operator from +,-,/ or *!</p>
+  <table>
+    <tr>
+      <td style="width: inherit">Enter a minimum number:</td>
+      <td><ion-input type="text" id="MinNum"></ion-input></td>
+    </tr>
+  </table>
+
+  <p> </p>
+
+  <p>Enter a maximum number: <ion-input type="text" id="MaxMum"></ion-input></p>
+
+  <ion-item>
+    <ion-label>Select an operator: </ion-label>
+    <ion-select [(ngModel)]="operator">
+      <ion-option value="add">Addition</ion-option>
+      <ion-option value="sub">Subtraction</ion-option>
+      <ion-option value="mult">Multiplication</ion-option>
+      <ion-option value="div">Division</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <br>
 
   <table style="width: 100%; ">
     <tr>
