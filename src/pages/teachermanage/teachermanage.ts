@@ -22,11 +22,6 @@ export class TeachermanagePage {
   studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":""};
   constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
               private toastCtrl: ToastController) {
-
-    // const data = JSON.parse(localStorage.getItem('studentData'));
-    // this.StudentDetails = data.studentData;
-
-
   }
 
   ionViewDidLoad() {
@@ -58,6 +53,9 @@ export class TeachermanagePage {
   }
 
   studentdeets() {
+    for (var i = 0; i < this.StudentDetails; i++) {
+      return this.StudentDetails[i].username;
+    }
 
   }
 

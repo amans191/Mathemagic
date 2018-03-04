@@ -52,10 +52,11 @@
 
   <h6>Choose a student:</h6>
   <label class="item item-input item-select">
-    <select class="input-label">
-      <option (click)="studentdeets()" value="aman">aman</option>
-      <option (click)="studentdeets()" value="arsh">arsh</option>
-    </select>
+    <ion-select>
+      <ion-option *ngFor="let item of StudentDetails">
+      <p (click)='studentdeets()'>{{ item.username }}</p> <!-- if you want to show that id -->
+      </ion-option>
+    </ion-select>
   </label>
 
   <ion-item>
@@ -76,11 +77,6 @@
   <ion-item>
     <ion-label floating>Password</ion-label>
     <ion-input type="password" [(ngModel)]="studentData.studentPassword"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Confirm Password</ion-label>
-    <ion-input type="password"></ion-input>
   </ion-item>
 
 </ion-content>

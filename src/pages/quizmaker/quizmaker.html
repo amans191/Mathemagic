@@ -1,9 +1,3 @@
-<!--
-  Generated template for the QuizMakerPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -15,75 +9,35 @@
 
 <ion-content padding id="page">
 
-  <table>
+  <table style="border: 0px">
     <tr>
-      <td style="width: inherit">Enter a minimum number:</td>
-      <td><ion-input type="text" id="MinNum"></ion-input></td>
-    </tr>
-  </table>
-
-  <p> </p>
-
-  <p>Enter a maximum number: <ion-input type="text" id="MaxMum"></ion-input></p>
-
-  <ion-item>
-    <ion-label>Select an operator: </ion-label>
-    <ion-select [(ngModel)]="operator">
-      <ion-option value="add">Addition</ion-option>
-      <ion-option value="sub">Subtraction</ion-option>
-      <ion-option value="mult">Multiplication</ion-option>
-      <ion-option value="div">Division</ion-option>
-    </ion-select>
-  </ion-item>
-
-  <br>
-
-  <table style="width: 100%; ">
-    <tr>
-      <td></td>
-      <td>Num 1</td>
-      <td>Operator</td>
-      <td>Num 2</td>
-      <td>Answer</td>
+      <td style="width: 75%">Enter a minimum number:</td>
+      <td>
+        <ion-input type="number" id="MinNum" [(ngModel)]="MinNum"></ion-input>
+      </td>
     </tr>
     <tr>
-      <td>1.</td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td></td>
+      <td style="width: 75%">Enter a maximum number:</td>
+      <td>
+        <ion-input type="number" id="MaxNum" [(ngModel)]="MaxNum"></ion-input>
+      </td>
     </tr>
     <tr>
-      <td>2.</td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>3.</td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>4.</td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>5.</td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td><ion-input type="text"></ion-input></td>
-      <td></td>
+      <ion-item>
+        <ion-label>Select an operator: </ion-label>
+        <ion-select id="operator" [(ngModel)]="operator">
+          <ion-option value="Addition">Addition</ion-option>
+          <ion-option value="Subtraction">Subtraction</ion-option>
+          <ion-option value="Multiplication">Multiplication</ion-option>
+          <ion-option value="Division">Division</ion-option>
+        </ion-select>
+      </ion-item>
     </tr>
   </table>
 
   <br>
-  <button ion-button>Publish Quiz!</button>
+  <button ion-button (click)="createQuiz()">Generate Quiz!</button>
+  <br>
 
+  <div id="generate"></div>
 </ion-content>
