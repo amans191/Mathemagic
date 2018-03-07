@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {IonicPage, NavController, ToastController} from 'ionic-angular';
 import {AuthenticationServiceProvider} from "../../providers/authentication-service/authentication-service";
 
+
 /**
  * Generated class for the TeachermanagePage page.
  *
@@ -17,11 +18,16 @@ import {AuthenticationServiceProvider} from "../../providers/authentication-serv
 export class TeachermanagePage {
 
   public StudentDetails : any;
+  public TeacherDetails: any;
 
   responseData: any;
-  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":""};
+  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":"", "teacherEmail":""};
+
   constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
               private toastCtrl: ToastController) {
+
+    const data = JSON.parse(localStorage.getItem('teacherData'));
+    this.TeacherDetails = data.teacherData;
   }
 
   ionViewDidLoad() {
@@ -29,7 +35,8 @@ export class TeachermanagePage {
   }
 
   registerstudent() {
-    if (this.studentData.username && this.studentData.studentFName && this.studentData.studentSName && this.studentData.studentPassword)
+    if (this.studentData.username && this.studentData.studentFName && this.studentData.studentSName && this.studentData.studentPassword
+    && (this.studentData.teacherEmail = this.TeacherDetails.email))
     {
       this.authenticationServiceProvider.postData(this.studentData, "teacherManage").then((result) => {
         this.responseData = result;
@@ -68,3 +75,5 @@ export class TeachermanagePage {
   }
 
 }
+
+

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { QuizMakerPage } from "../quizmaker/quizmaker";
+import { QuizmakerPage } from "../quizmaker/quizmaker";
 
 /**
  * Generated class for the TeacherhomePage page.
@@ -25,7 +25,7 @@ export class TeacherhomePage {
   }
 
   makequiz() {
-    this.navCtrl.push(QuizMakerPage);
+    this.navCtrl.push(QuizmakerPage);
   }
 
 }

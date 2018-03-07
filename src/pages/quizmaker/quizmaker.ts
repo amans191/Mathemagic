@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-quizmaker',
+  templateUrl: 'quizmaker.html'
 })
-export class HomePage {
+export class QuizmakerPage {
 
   constructor(public navCtrl: NavController) {
 
@@ -19,7 +19,7 @@ export class HomePage {
   private altAdditionWords       = ['+','Plus','Add'];
   private altSubtractionWords    = ['-','Subtract','Minus','take away'];
   private altMultiplicationWords = ['x','Multiply','times'];
-  private altDivisionWords       = ['÷','Divide','Divided by'];
+  private altDivisionWords       = ['÷','Divide','Divided by','From'];
 
   public MaxNum: number;
   public MinNum: number;
