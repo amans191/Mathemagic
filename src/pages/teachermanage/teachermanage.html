@@ -51,13 +51,12 @@
   <h3>Update Student</h3>
 
   <h6>Choose a student:</h6>
-  <ion-item>
-    <ion-select interface="action-sheet">
-      <ion-option *ngFor="let item of StudentDetails">
-        <p (click)='studentdeets()'>{{ item.username }}</p> <!-- if you want to show that id -->
-      </ion-option>
-    </ion-select>
-  </ion-item>
+
+  <select>
+    <option *ngFor="let item of StudentDetails">
+      <p (click)='studentdeets()'>{{ item.username }}</p> <!-- if you want to show that id -->
+    </option>
+  </select>
 
   <ion-item>
     <ion-label floating>Username</ion-label>

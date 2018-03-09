@@ -14,6 +14,14 @@
 
 
 <ion-content padding id="page">
+
+  <p text-center>Choose a Theme</p>
+  <select (click)="toggleAppTheme()" [(ngModel)]="colour">
+    <option value="light" >Light</option>
+    <option value="dark">dark</option>
+    <option value="green">green</option>
+  </select>
+
   <button ion-button id="buttonlog" (click)="start()">Log Out</button>
 
 </ion-content>

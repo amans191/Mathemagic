@@ -31,6 +31,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
 import { HttpModule } from "@angular/http";
+import { SettingsProvider } from '../providers/settings/settings';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
@@ -108,7 +109,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthenticationServiceProvider
+    AuthenticationServiceProvider,
+    SettingsProvider
   ]
 })
 export class AppModule {}
