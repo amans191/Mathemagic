@@ -7,5 +7,17 @@ page-StudentSettigns {
     //  border: 1px solid black;
     //  float: inherit;
     //}
+    table{
+      position: center;
+    }
+
+    td {
+      padding-left: 3px;
+    }
+
+    button {
+      width: 100%;
+      border: 1px solid black;
+    }
   }
 }

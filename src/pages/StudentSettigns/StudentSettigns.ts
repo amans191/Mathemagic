@@ -27,17 +27,26 @@ export class StudentSettignsPage {
   green() {
     this.settings.setActiveTheme('green-theme');
   }
-
   yellow() {
     this.settings.setActiveTheme('yellow-theme');
   }
-
   white() {
     this.settings.setActiveTheme('light-theme');
   }
-
   black() {
     this.settings.setActiveTheme('dark-theme');
+  }
+  pink() {
+    this.settings.setActiveTheme('pink-theme');
+  }
+  orange() {
+    this.settings.setActiveTheme('orange-theme');
+  }
+  purple() {
+    this.settings.setActiveTheme('purple-theme');
+  }
+  red() {
+    this.settings.setActiveTheme('red-theme');
   }
 
   // toggleAppTheme() {
