@@ -24,22 +24,38 @@ export class StudentSettignsPage {
     console.log('ionViewDidLoad SettingsPage');
   }
 
-  toggleAppTheme() {
-    if (this.colour == 'light') {
-      this.settings.setActiveTheme('light-theme');
-    }
-    if (this.colour == 'dark') {
-      this.settings.setActiveTheme('dark-theme');
-    }
-    if (this.colour == 'green') {
-      this.settings.setActiveTheme('green-theme');
-    }
-    if (this.colour == 'yellow') {
-      this.settings.setActiveTheme('yellow-theme');
-
-    }
-
+  green() {
+    this.settings.setActiveTheme('green-theme');
   }
+
+  yellow() {
+    this.settings.setActiveTheme('yellow-theme');
+  }
+
+  white() {
+    this.settings.setActiveTheme('light-theme');
+  }
+
+  black() {
+    this.settings.setActiveTheme('dark-theme');
+  }
+
+  // toggleAppTheme() {
+  //   if (this.colour == 'light') {
+  //     this.settings.setActiveTheme('light-theme');
+  //   }
+  //   if (this.colour == 'dark') {
+  //     this.settings.setActiveTheme('dark-theme');
+  //   }
+  //   if (this.colour == 'green') {
+  //     this.settings.setActiveTheme('green-theme');
+  //   }
+  //   if (this.colour == 'yellow') {
+  //     this.settings.setActiveTheme('yellow-theme');
+  //
+  //   }
+  //
+  // }
 
   start() {
     //to ger rid of the StudentTabs when you logout on the start page
