@@ -25,15 +25,20 @@ export class StudentSettignsPage {
   }
 
   toggleAppTheme() {
-    if (this.colour === 'light') {
+    if (this.colour == 'light') {
       this.settings.setActiveTheme('light-theme');
     }
     if (this.colour == 'dark') {
       this.settings.setActiveTheme('dark-theme');
     }
-    if (this.colour == 'green'){
+    if (this.colour == 'green') {
       this.settings.setActiveTheme('green-theme');
     }
+    if (this.colour == 'yellow') {
+      this.settings.setActiveTheme('yellow-theme');
+
+    }
+
   }
 
   start() {

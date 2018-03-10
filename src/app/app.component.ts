@@ -3,15 +3,15 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { SettingsProvider } from './../providers/settings/settings';
-
 import { StartPage } from '../pages/start/start';
+import {SettingsProvider} from "../providers/settings/settings";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = StartPage;
+
   selectedTheme: String;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private settings: SettingsProvider) {
