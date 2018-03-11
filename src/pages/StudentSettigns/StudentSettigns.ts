@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { App, IonicPage, NavController } from 'ionic-angular';
+import {App, IonicPage, NavController} from 'ionic-angular';
 import { SettingsProvider } from './../../providers/settings/settings';
+import {StudentHomePage} from "../StudentHome/StudentHome";
 
 /**
  * Generated class for the SettingsPage page.
@@ -15,9 +16,11 @@ import { SettingsProvider } from './../../providers/settings/settings';
   templateUrl: 'StudentSettigns.html',
 })
 export class StudentSettignsPage {
-  colour: string;
 
   constructor(public navCtrl: NavController, public app: App, private settings: SettingsProvider) {
+    this.navCtrl.push(StudentHomePage, {
+      param1: this.fontSize
+    });
   }
 
   ionViewDidLoad() {
@@ -65,6 +68,22 @@ export class StudentSettignsPage {
   //   }
   //
   // }
+
+  small() {
+    this.settings.setActiveFont('smallfont-theme');
+  }
+  medium() {
+    this.settings.setActiveFont('medfont-theme');
+  }
+  big() {
+    this.settings.setActiveFont('bigfont-them');
+  }
+
+  fontSize: number = 1.5; // default font size in `em`
+
+  fontSizeChange($val: number){
+    this.fontSize +=$val;
+  }
 
   start() {
     //to ger rid of the StudentTabs when you logout on the start page

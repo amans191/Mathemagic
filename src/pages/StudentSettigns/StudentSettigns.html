@@ -12,11 +12,10 @@
 
 </ion-header>
 
-
-<ion-content padding id="page">
+<ion-content padding [ngStyle]="{'font-size': fontSize+'em' }" id="page">
 
   <p>Choose a Background Colour:</p>
-  <table width="100%">
+  <table>
     <tr>
       <td>
         <button ion-button id="green" (click)="green()" style="background-color: #00B200">Green</button>
@@ -55,6 +54,34 @@
     <!--<option value="green">green</option>-->
     <!--<option value="yellow">yellow</option>-->
   <!--</select>-->
+
+  <div id="fonttable">
+    <p>Choose a Font Size</p>
+
+    <ion-buttons>
+      <button (click)="fontSizeChange(-0.2)" ion-button icon-only>
+        <ion-icon name="remove"></ion-icon>
+      </button>
+      <button (click)="fontSizeChange(0.2)" ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </div>
+
+    <!--<table>-->
+      <!--<tr>-->
+        <!--<td>-->
+          <!--<button ion-button (click)="small()" style="font-size: 20px">A</button>-->
+        <!--</td>-->
+        <!--<td>-->
+          <!--<button ion-button (click)="medium()" style="font-size: 28px">A</button>-->
+        <!--</td>-->
+        <!--<td>-->
+          <!--<button ion-button (click)="big()" style="font-size: 36px">A</button>-->
+        <!--</td>-->
+      <!--</tr>-->
+    <!--</table>-->
+
   <div padding-top="300px">
     <button ion-button id="buttonlog" (click)="start()">Log Out</button>
   </div>
