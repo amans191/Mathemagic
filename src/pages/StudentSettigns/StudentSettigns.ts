@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {App, IonicPage, NavController} from 'ionic-angular';
 import { SettingsProvider } from './../../providers/settings/settings';
 import {StudentHomePage} from "../StudentHome/StudentHome";
+import { FontsettingsProvider } from "../../providers/fontsettings/fontsettings";
 
 /**
  * Generated class for the SettingsPage page.
@@ -17,10 +18,12 @@ import {StudentHomePage} from "../StudentHome/StudentHome";
 })
 export class StudentSettignsPage {
 
-  constructor(public navCtrl: NavController, public app: App, private settings: SettingsProvider) {
-    this.navCtrl.push(StudentHomePage, {
-      param1: this.fontSize
-    });
+  font_size: number = 62.5;
+
+
+  constructor(public navCtrl: NavController, public app: App, private settings: SettingsProvider,
+              private fontsettings: FontsettingsProvider) {
+    //this.fontsettings.setFont(this.fontSize);
   }
 
   ionViewDidLoad() {
@@ -79,10 +82,15 @@ export class StudentSettignsPage {
     this.settings.setActiveFont('bigfont-them');
   }
 
-  fontSize: number = 1.5; // default font size in `em`
-
-  fontSizeChange($val: number){
-    this.fontSize +=$val;
+  // fontSizeChange($val: number){
+  //   this.fontSize +=$val;
+  // }
+  increaseFontSize() {
+    this.font_size = this.font_size * 1.2;
+    let htmlRoot:HTMLElement = <HTMLElement> document.getElementById("PageStud");
+    if (htmlRoot != null) {
+      htmlRoot.style.fontSize = this.font_size + '%';
+    }
   }
 
   start() {

@@ -12,7 +12,8 @@
 
 </ion-header>
 
-<ion-content padding [ngStyle]="{'font-size': fontSize+'em' }" id="page">
+<!--<ion-content padding [ngStyle]="{'font-size': fontSize+'em' }" id="page">-->
+<ion-content padding id="PageStud" [ngStyle]="{'font-size': font_size + '%'}">
 
   <p>Choose a Background Colour:</p>
   <table>
@@ -58,15 +59,18 @@
   <div id="fonttable">
     <p>Choose a Font Size</p>
 
-    <ion-buttons>
-      <button (click)="fontSizeChange(-0.2)" ion-button icon-only>
-        <ion-icon name="remove"></ion-icon>
-      </button>
-      <button (click)="fontSizeChange(0.2)" ion-button icon-only>
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-buttons>
+    <button (click)="increaseFontSize()">Increase Font Size</button>
   </div>
+
+    <!--<ion-buttons>-->
+      <!--<button (click)="fontSizeChange(-0.2)" ion-button icon-only>-->
+        <!--<ion-icon name="remove"></ion-icon>-->
+      <!--</button>-->
+      <!--<button (click)="fontSizeChange(0.2)" ion-button icon-only>-->
+        <!--<ion-icon name="add"></ion-icon>-->
+      <!--</button>-->
+    <!--</ion-buttons>-->
+  <!--</div>-->
 
     <!--<table>-->
       <!--<tr>-->
