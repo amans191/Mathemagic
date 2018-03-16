@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { App, Events, IonicPage, NavController } from 'ionic-angular';
 import { SettingsProvider } from './../../providers/settings/settings';
-import { Storage  } from '@ionic/storage';
+import { Storage } from "@ionic/storage";
 
 /**
  * Generated class for the SettingsPage page.
@@ -21,9 +21,9 @@ export class StudentSettignsPage {
 
   constructor(public navCtrl: NavController, public app: App, private settings: SettingsProvider,
               private storage: Storage, public events: Events) {
-    this.storage.get('size').then((val) => {
-      this.fontSize = val;
-    });
+    // this.storage.get('size').then((val) => {
+    //   this.fontSize = val;
+    // });
   }
 
   ionViewDidLoad() {
@@ -55,11 +55,11 @@ export class StudentSettignsPage {
     this.settings.setActiveTheme('red-theme');
   }
 
-  changeSize() {
-    this.events.publish('size', this.fontSize);
-    this.storage.set('size', this.fontSize).then(() => {
-    });
-  }
+  // changeSize() {
+  //   this.events.publish('size', this.fontSize);
+  //   this.storage.set('size', this.fontSize).then(() => {
+  //   });
+  // }
 
   start() {
     //to ger rid of the StudentTabs when you logout on the start page

@@ -34,6 +34,7 @@ import { HttpModule } from "@angular/http";
 import { SettingsProvider } from '../providers/settings/settings';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
         pageTransition: 'ios-transition'
       }
     ),
-    HttpModule
+    HttpModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

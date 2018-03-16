@@ -1,4 +1,4 @@
-//For Phaser to work with Ionic - AS
+//For Phaser to work with Ionic
 var path = require( "path" );
 var webpackMerge = require( "webpack-merge" );
 
