@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { App, Events, IonicPage, NavController } from 'ionic-angular';
 import { SettingsProvider } from './../../providers/settings/settings';
+import { Storage } from "@ionic/storage";
 
 /**
  * Generated class for the SettingsPage page.
@@ -18,8 +19,11 @@ export class StudentSettignsPage {
 
   fontSize: any;
 
-  constructor(public navCtrl: NavController, public app: App, private settings: SettingsProvider) {
-
+  constructor(public navCtrl: NavController, public app: App, private settings: SettingsProvider,
+              public storage: Storage, public events: Events) {
+    this.storage.get('size').then((val) => {
+      this.fontSize = val;
+    });
   }
 
   ionViewDidLoad() {
@@ -49,6 +53,12 @@ export class StudentSettignsPage {
   }
   red() {
     this.settings.setActiveTheme('red-theme');
+  }
+
+  changeSize() {
+    this.events.publish('size', this.fontSize);
+    this.storage.set('size', this.fontSize).then(() => {
+    });
   }
 
   start() {
