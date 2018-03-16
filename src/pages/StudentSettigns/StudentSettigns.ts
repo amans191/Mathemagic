@@ -21,6 +21,9 @@ export class StudentSettignsPage {
 
   constructor(public navCtrl: NavController, public app: App, private settings: SettingsProvider,
               private storage: Storage, public events: Events) {
+    this.storage.get('size').then((val) => {
+      this.fontSize = val;
+    });
   }
 
   ionViewDidLoad() {
@@ -50,6 +53,12 @@ export class StudentSettignsPage {
   }
   red() {
     this.settings.setActiveTheme('red-theme');
+  }
+
+  changeSize() {
+    this.events.publish('size', this.fontSize);
+    this.storage.set('size', this.fontSize).then(() => {
+    });
   }
 
   start() {
