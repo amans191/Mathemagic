@@ -14,12 +14,9 @@ export class MyApp {
 
   selectedTheme: String;
 
-  selectedFont: String;
-
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private settings: SettingsProvider) {
     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
 
-    this.settings.getActiveFont().subscribe(valf => this.selectedFont = valf);
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

@@ -32,7 +32,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
 import { HttpModule } from "@angular/http";
 import { SettingsProvider } from '../providers/settings/settings';
-import { FontsettingsProvider } from '../providers/fontsettings/fontsettings';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
@@ -111,8 +110,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthenticationServiceProvider,
-    SettingsProvider,
-    FontsettingsProvider
+    SettingsProvider
   ]
 })
 export class AppModule {}

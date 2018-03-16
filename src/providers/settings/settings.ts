@@ -12,11 +12,8 @@ export class SettingsProvider {
 
   private theme: BehaviorSubject<String>;
 
-  private font: BehaviorSubject<String>;
-
   constructor() {
     this.theme = new BehaviorSubject('yellow-theme');
-    this.font = new BehaviorSubject('smallfont-theme');
   }
 
   //Colour
@@ -26,15 +23,6 @@ export class SettingsProvider {
 
   getActiveTheme() {
     return this.theme.asObservable();
-  }
-
-  //Font
-  setActiveFont(valf) {
-    this.font.next(valf);
-  }
-
-  getActiveFont() {
-    return this.font.asObservable();
   }
 }
 
