@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { StartPage } from '../pages/start/start';
 import { SettingsProvider } from "../providers/settings/settings";
+import { Storage } from "@ionic/storage";
 
 @Component({
   templateUrl: 'app.html'
@@ -14,9 +15,15 @@ export class MyApp {
 
   selectedTheme: String;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private settings: SettingsProvider)
-  {
+  fontSize = 20;
+
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private settings: SettingsProvider,
+    private storage: Storage) {
     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
+
+    this.storage.get('size').then((val) => {
+      this.fontSize = val;
+    });
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

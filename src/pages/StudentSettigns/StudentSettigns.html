@@ -14,7 +14,7 @@
 
 <ion-content padding id="page">
 
-  <p>Choose a Background Colour:</p>
+  <p class="size-{{fontSize}}">Choose a Background Colour:</p>
   <table>
     <tr>
       <td>
@@ -48,10 +48,10 @@
 
   </table>
 
-  <div class="size-{{fontSize}}">
+  <div>
     <ion-list>
       <ion-item>
-        <ion-label>Font-size</ion-label>
+        <ion-label class="size-{{fontSize}}">Font-size:</ion-label>
         <ion-select (ionChange)="changeSize()" [(ngModel)]="fontSize">
           <ion-option value="20">20px</ion-option>
           <ion-option value="25">25px</ion-option>
@@ -60,7 +60,7 @@
           <ion-option value="40">40px</ion-option>
         </ion-select>
       </ion-item>
-      <ion-list-header>Testing Text Font Size id - {{fontSize}}px</ion-list-header>
+      <!--<ion-list-header>Testing Text Font Size id - {{fontSize}}px</ion-list-header>-->
     </ion-list>
   </div>
 
