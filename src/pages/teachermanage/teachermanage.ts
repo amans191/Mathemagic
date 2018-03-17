@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {IonicPage, NavController, ToastController} from 'ionic-angular';
 import {AuthenticationServiceProvider} from "../../providers/authentication-service/authentication-service";
 
-
 /**
  * Generated class for the TeachermanagePage page.
  *
@@ -16,18 +15,11 @@ import {AuthenticationServiceProvider} from "../../providers/authentication-serv
   templateUrl: 'teachermanage.html',
 })
 export class TeachermanagePage {
-
-  public StudentDetails : any;
-  public TeacherDetails: any;
-
   responseData: any;
-  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":"", "teacherEmail":""};
-
+  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":""};
   constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
               private toastCtrl: ToastController) {
 
-    const data = JSON.parse(localStorage.getItem('teacherData'));
-    this.TeacherDetails = data.teacherData;
   }
 
   ionViewDidLoad() {
@@ -35,8 +27,7 @@ export class TeachermanagePage {
   }
 
   registerstudent() {
-    if (this.studentData.username && this.studentData.studentFName && this.studentData.studentSName && this.studentData.studentPassword
-    && (this.studentData.teacherEmail = this.TeacherDetails.email))
+    if (this.studentData.username && this.studentData.studentFName && this.studentData.studentSName && this.studentData.studentPassword)
     {
       this.authenticationServiceProvider.postData(this.studentData, "teacherManage").then((result) => {
         this.responseData = result;
@@ -46,6 +37,7 @@ export class TeachermanagePage {
         {
           //to carry cache for local storage
           localStorage.setItem('studentData', JSON.stringify(this.responseData))
+          this.presentToast("Student added!");
         }
 
       }, (err) => {
@@ -59,13 +51,6 @@ export class TeachermanagePage {
 
   }
 
-  studentdeets() {
-    for (var i = 0; i < this.StudentDetails; i++) {
-      return this.StudentDetails[i].username;
-    }
-
-  }
-
   presentToast(message) {
     let toast = this.toastCtrl.create({
       message: message,
@@ -75,5 +60,3 @@ export class TeachermanagePage {
   }
 
 }
-
-
