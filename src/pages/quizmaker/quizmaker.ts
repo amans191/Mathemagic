@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { AuthenticationServiceProvider } from "../../providers/authentication-service/authentication-service";
+
 
 @Component({
   selector: 'page-quizmaker',
@@ -7,8 +9,13 @@ import { NavController } from 'ionic-angular';
 })
 export class QuizmakerPage {
 
-  constructor(public navCtrl: NavController) {
-
+  responseData: any;
+  teacherData :any;
+  quizData = {"teacher_email":"", "quizDateTime":"", "ques1":"", "ques2":"", "ques3":"", "ques4":"", "ques5":"", "ans1":"", "ans2":"", "ans3":"", "ans4":"", "ans5":""};
+  constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
+              private toastCtrl: ToastController) {
+    var data = JSON.parse(localStorage.getItem('teacherData'));
+    this.teacherData = data.teacherData;
   }
 
   private generate  : boolean = false;
@@ -25,6 +32,7 @@ export class QuizmakerPage {
   public MinNum: number;
   public operator: string = '';
   public questions: Question[] = [];
+
 
   randomNumber = () : number => {
     return Math.floor(Math.random()*(this.MaxNum - this.MinNum))+1;
@@ -109,8 +117,75 @@ export class QuizmakerPage {
           + ' = ' + " "
           + this.questions[i].answer +
           `</div>`;
+
+        if(i == 0)
+        {
+          this.quizData.ques1 = this.questions[i].num1 + " "
+            + this.questions[i].operator + " "
+            + this.questions[i].num2;
+
+          this.quizData.ans1 = this.questions[i].answer + "";
+        }
+        if(i == 1)
+        {
+          this.quizData.ques2 = this.questions[i].num1 + " "
+            + this.questions[i].operator + " "
+            + this.questions[i].num2;
+
+          this.quizData.ans2 = this.questions[i].answer + "";
+        }
+        if(i == 2)
+        {
+          this.quizData.ques3 = this.questions[i].num1 + " "
+            + this.questions[i].operator + " "
+            + this.questions[i].num2;
+
+          this.quizData.ans3 = this.questions[i].answer + "";
+        }
+        if(i == 3)
+        {
+          this.quizData.ques4 = this.questions[i].num1 + " "
+            + this.questions[i].operator + " "
+            + this.questions[i].num2;
+
+          this.quizData.ans4 = this.questions[i].answer + "";
+        }
+        if(i == 4)
+        {
+          this.quizData.ques5 = this.questions[i].num1 + " "
+            + this.questions[i].operator + " "
+            + this.questions[i].num2;
+
+          this.quizData.ans5 = this.questions[i].answer + "";
+        }
       }
       document.getElementById('generate').innerHTML = inner;
+
+      if (this.quizData.ques1 && this.quizData.ques2 && this.quizData.ques3 &&
+        this.quizData.ques4 && this.quizData.ques5)
+      {
+        this.quizData.teacher_email = this.teacherData.email;
+        this.authenticationServiceProvider.postData(this.quizData, "submitQuiz").then((result) => {
+          this.responseData = result;
+          console.log(this.responseData);
+
+          if (this.responseData)
+          {
+            //to carry cache for local storage
+            //localStorage.setItem('quizData', JSON.stringify(this.responseData))
+            alert('Quiz Added!');
+          }
+
+        }, (err) => {
+          //console.warn(err.responseText);
+          console.log("Didn't work man!");
+        });
+      }
+      else
+      {
+        alert("Invalid Details, please enter again!");
+      }
+
     }
 
   }

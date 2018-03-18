@@ -11,15 +11,21 @@
 
   <table style="border: 0px">
     <tr>
+      <td style="width:10%">Select Date and Time:</td>
+      <td>
+        <ion-datetime style="width:100%; margin-left:-57%;" displayFormat="DD/MM/YY"  [(ngModel)]="quizData.quizDateTime" id="startDateTime"></ion-datetime>
+      </td>
+    </tr>
+    <tr>
       <td style="width: 75%">Enter a minimum number:</td>
       <td>
-        <ion-input type="number" id="MinNum" [(ngModel)]="MinNum"></ion-input>
+        <ion-input type="number" id="MinNum" style="border:1px solid grey;" [(ngModel)]="MinNum" ></ion-input>
       </td>
     </tr>
     <tr>
       <td style="width: 75%">Enter a maximum number:</td>
       <td>
-        <ion-input type="number" id="MaxNum" [(ngModel)]="MaxNum"></ion-input>
+        <ion-input type="number" id="MaxNum" style="border:1px solid grey;" [(ngModel)]="MaxNum"></ion-input>
       </td>
     </tr>
     <tr>
