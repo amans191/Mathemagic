@@ -34,8 +34,9 @@ export class StudentHomePage {
 
   infoToggle() {
     let alert = this.alertCtrl.create({
-      title: 'New Friend!',
-      subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+      title: 'Home Page!',
+      subTitle: '<p>Welcome to the Home Page!</p>' +
+                '<p>Choose Either to play a game or to do The Daily Quiz</p>',
       buttons: ['OK']
     });
     alert.present();

@@ -27,6 +27,8 @@ import { GameHomePage } from "../pages/GameHome/GameHome";
 import { GamePage } from "../pages/game/game";
 import { QuizmakerPage } from "../pages/quizmaker/quizmaker";
 
+import { PopoverPage } from "../pages/popover/popover";
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthenticationServiceProvider } from '../providers/authentication-service/authentication-service';
@@ -61,7 +63,8 @@ import { IonicStorageModule } from '@ionic/storage';
     TeacherregisterPage,
     GameHomePage,
     GamePage,
-    QuizmakerPage
+    QuizmakerPage,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -103,7 +106,8 @@ import { IonicStorageModule } from '@ionic/storage';
     TeacherregisterPage,
     GameHomePage,
     GamePage,
-    QuizmakerPage
+    QuizmakerPage,
+    PopoverPage
   ],
 
   providers: [
