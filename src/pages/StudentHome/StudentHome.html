@@ -11,7 +11,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding id="PageStud">
+<ion-content padding id="page">
   <h2 class="size-{{fontSize}}">Welcome to Mathemagic!</h2>
 
   <button ion-button (click)="game()" id="btnMonkey">Monkey Maths</button>
@@ -19,45 +19,45 @@
   <button ion-button (click)="quiz()" id="btnQuiz">Quiz</button>
 
   <div id="quizDetails" hidden="hidden">
-    <div style='margin-top:2%;float:left;width:100%;font-size:15pt;'>
+    <div style='margin-top:2%; float:left; width:100%;' class="size-{{fontSize}}">
       <label>
         1 :
         {{quizData.ques1}}
         =
       </label>
-      <ion-input type="number" [(ngModel)]="scoreData.ans1" style="width:50%;float:right;border-color:white;"></ion-input>
+      <ion-input type="number" [(ngModel)]="scoreData.ans1" style="width:50%;float:right;background-color: white"></ion-input>
     </div>
-    <div style='margin-top:2%;float:left;width:100%;font-size:15pt;'>
+    <div style='margin-top:2%;float:left;width:100%;'>
       <label>
         2 :
         {{quizData.ques2}}
         =
       </label>
-      <ion-input type="number" [(ngModel)]="scoreData.ans2" style="width:50%;float:right;border-color:white;"></ion-input>
+      <ion-input type="number" [(ngModel)]="scoreData.ans2" style="width:50%;float:right;background-color: white"></ion-input>
     </div>
-    <div style='margin-top:2%;float:left;width:100%;font-size:15pt;'>
+    <div style='margin-top:2%;float:left;width:100%;'>
       <label>
         3 :
         {{quizData.ques3}}
         =
       </label>
-      <ion-input type="number" [(ngModel)]="scoreData.ans3" style="width:50%;float:right;border-color:white;"></ion-input>
+      <ion-input type="number" [(ngModel)]="scoreData.ans3" style="width:50%;float:right;background-color: white"></ion-input>
     </div>
-    <div style='margin-top:2%;float:left;width:100%;font-size:15pt;'>
+    <div style='margin-top:2%;float:left;width:100%;'>
       <label>
         4 :
         {{quizData.ques4}}
         =
       </label>
-      <ion-input type="number" [(ngModel)]="scoreData.ans4" style="width:50%;float:right;border-color:white;"></ion-input>
+      <ion-input type="number" [(ngModel)]="scoreData.ans4" style="width:50%;float:right;background-color: white"></ion-input>
     </div>
-    <div style='margin-top:2%;float:left;width:100%;font-size:15pt;'>
+    <div style='margin-top:2%;float:left;width:100%;'>
       <label>
         5 :
         {{quizData.ques5}}
         =
       </label>
-      <ion-input type="number" [(ngModel)]="scoreData.ans5" style="width:50%;float:right;border-color:white;"></ion-input>
+      <ion-input type="number" [(ngModel)]="scoreData.ans5" style="width:50%;float:right;background-color: white"></ion-input>
     </div>
   </div>
 

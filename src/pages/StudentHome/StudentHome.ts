@@ -14,8 +14,10 @@ export class StudentHomePage {
 
   responseData: any;
   studentData: any;
-  quizData = {"quiz_id":"", "teacher_email":"", "quizDateTime":"", "ques1":"", "ques2":"", "ques3":"", "ques4":"", "ques5":"", "ans1":"", "ans2":"", "ans3":"", "ans4":"", "ans5":""};
-  scoreData = {"student_username":"", "quiz_id":"", "ques1":"", "ques2":"", "ques3":"", "ques4":"", "ques5":"", "ans1":"", "ans2":"", "ans3":"", "ans4":"", "ans5":"","obtainedMarks":"","totalMarks":""};
+  quizData = {"quiz_id":"", "teacher_email":"", "quizDateTime":"", "ques1":"", "ques2":"", "ques3":"", "ques4":"",
+    "ques5":"", "ans1":"", "ans2":"", "ans3":"", "ans4":"", "ans5":""};
+  scoreData = {"student_username":"", "quiz_id":"", "ques1":"", "ques2":"", "ques3":"", "ques4":"", "ques5":"",
+    "ans1":"", "ans2":"", "ans3":"", "ans4":"", "ans5":"","obtainedMarks":"","totalMarks":""};
 
   fontSize: any;
 
@@ -46,7 +48,7 @@ export class StudentHomePage {
     let alert = this.alertCtrl.create({
       title: 'Home Page!',
       subTitle: '<p>Welcome to the Home Page!</p>' +
-                '<p>Choose Either to play a game or to do The Daily Quiz</p>',
+                '<p>Choose either to play a game or to do The Daily Quiz</p>',
       buttons: ['OK']
     });
     alert.present();
@@ -80,7 +82,6 @@ export class StudentHomePage {
       }
 
     }, (err) => {
-      //console.warn(err.responseText);
       console.log("Didn't work man!");
     });
 
@@ -141,6 +142,7 @@ export class StudentHomePage {
         console.log("Didn't work man!");
       });
     }
+
     else
     {
       alert("Incomplete Details, please enter again!");
