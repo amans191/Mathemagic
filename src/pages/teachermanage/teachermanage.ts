@@ -16,10 +16,16 @@ import {AuthenticationServiceProvider} from "../../providers/authentication-serv
 })
 export class TeachermanagePage {
   responseData: any;
-  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":""};
+  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":"", "email":""};
+
+  public TeacherDetails: any;
+
   constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
               private toastCtrl: ToastController) {
 
+    const data = JSON.parse(localStorage.getItem('teacherData'));
+    this.TeacherDetails = data.teacherData;
+    console.log(this.TeacherDetails);
   }
 
   ionViewDidLoad() {
@@ -27,8 +33,10 @@ export class TeachermanagePage {
   }
 
   registerstudent() {
-    if (this.studentData.username && this.studentData.studentFName && this.studentData.studentSName && this.studentData.studentPassword)
+    if (this.studentData.username && this.studentData.studentFName && this.studentData.studentSName &&
+      this.studentData.studentPassword)
     {
+      this.studentData.email == this.TeacherDetails.email
       this.authenticationServiceProvider.postData(this.studentData, "teacherManage").then((result) => {
         this.responseData = result;
         console.log(this.responseData);

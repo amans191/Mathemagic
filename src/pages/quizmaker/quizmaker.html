@@ -9,41 +9,44 @@
 
 <ion-content padding id="page">
 
-  <table style="border: 0px">
+  <table style="width: 100%; height: 40%">
     <tr>
-      <td style="width:10%">Select Date and Time:</td>
+      <td style="width:66%;">Select Date and Time:</td>
       <td>
-        <ion-datetime style="width:100%; margin-left:-57%;" displayFormat="DD/MM/YY"  [(ngModel)]="quizData.quizDateTime" id="startDateTime"></ion-datetime>
+        <ion-datetime style="border:1px solid black; background-color: white" displayFormat="DD/MM/YY"  [(ngModel)]="quizData.quizDateTime" id="startDateTime"></ion-datetime>
       </td>
     </tr>
     <tr>
-      <td style="width: 75%">Enter a minimum number:</td>
+      <td style="width: 66%">Enter a minimum number:</td>
       <td>
-        <ion-input type="number" id="MinNum" style="border:1px solid grey;" [(ngModel)]="MinNum" ></ion-input>
+        <ion-input type="number" id="MinNum" style="border:1px solid black; background-color: white" [(ngModel)]="MinNum" ></ion-input>
       </td>
     </tr>
     <tr>
-      <td style="width: 75%">Enter a maximum number:</td>
+      <td style="width: 66%">Enter a maximum number:</td>
       <td>
-        <ion-input type="number" id="MaxNum" style="border:1px solid grey;" [(ngModel)]="MaxNum"></ion-input>
+        <ion-input type="number" id="MaxNum" style="border:1px solid black; background-color: white" [(ngModel)]="MaxNum"></ion-input>
       </td>
-    </tr>
-    <tr>
-      <ion-item>
-        <ion-label>Select an operator: </ion-label>
-        <ion-select id="operator" [(ngModel)]="operator">
-          <ion-option value="Addition">Addition</ion-option>
-          <ion-option value="Subtraction">Subtraction</ion-option>
-          <ion-option value="Multiplication">Multiplication</ion-option>
-          <ion-option value="Division">Division</ion-option>
-        </ion-select>
-      </ion-item>
     </tr>
   </table>
 
+  <ion-item>
+    <ion-label>Select an operator: </ion-label>
+    <ion-select id="operator" [(ngModel)]="operator">
+      <ion-option value="Addition">Addition</ion-option>
+      <ion-option value="Subtraction">Subtraction</ion-option>
+      <ion-option value="Multiplication">Multiplication</ion-option>
+      <ion-option value="Division">Division</ion-option>
+    </ion-select>
+  </ion-item>
+
   <br>
-  <button ion-button (click)="createQuiz()">Generate Quiz!</button>
+  <button ion-button (click)="createQuiz()" style="width: 100%">Generate Quiz and Publish!</button>
   <br>
 
-  <div id="generate"></div>
+
+
+  <div id="generate">
+    <br>
+  </div>
 </ion-content>

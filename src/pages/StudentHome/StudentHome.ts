@@ -142,11 +142,9 @@ export class StudentHomePage {
         console.log("Didn't work man!");
       });
     }
-
     else
     {
       alert("Incomplete Details, please enter again!");
     }
-
   }
 }
