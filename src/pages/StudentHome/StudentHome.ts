@@ -48,7 +48,7 @@ export class StudentHomePage {
     let alert = this.alertCtrl.create({
       title: 'Home Page!',
       subTitle: '<p>Welcome to the Home Page!</p>' +
-                '<p>Choose either to play a game or to do The Daily Quiz</p>',
+                '<p>Choose either to play a game or to do The Daily Quiz. Remember you can only do one quiz a day.</p>',
       buttons: ['OK']
     });
     alert.present();
@@ -76,12 +76,29 @@ export class StudentHomePage {
       {
         this.quizData = this.responseData;
         var quizDetails = document.getElementById('quizDetails');
-        quizDetails.hidden = false;
-        var btnSubmit =  document.getElementById('btnSubmit');
-        btnSubmit.hidden = false;
+        var btnSubmit = document.getElementById('btnSubmit');
+        if(this.quizData.quiz_id == null || this.quizData.quiz_id == "")
+        {
+          alert("No quiz for today!");
+          quizDetails.hidden = true;
+          btnSubmit.hidden = true;
+
+          this.generate = false;
+          var btnMonkey = document.getElementById('btnMonkey');
+          btnMonkey.hidden = false;
+
+          var btnQuiz = document.getElementById('btnQuiz');
+          btnQuiz.hidden = false;
+        }
+        else{
+          alert('Get Ready!!');
+          quizDetails.hidden = false;
+          btnSubmit.hidden = false;
+        }
       }
 
     }, (err) => {
+//console.warn(err.responseText);
       console.log("Didn't work man!");
     });
 
@@ -136,6 +153,19 @@ export class StudentHomePage {
         if (this.responseData)
         {
           alert(this.responseData.success.text);
+
+          this.generate = false;
+          var btnMonkey = document.getElementById('btnMonkey');
+          btnMonkey.hidden = false;
+
+          var btnQuiz = document.getElementById('btnQuiz');
+          btnQuiz.hidden = false;
+
+          var quizDetails = document.getElementById('quizDetails');
+          var btnSubmit = document.getElementById('btnSubmit');
+
+          quizDetails.hidden = true;
+          btnSubmit.hidden = true;
         }
 
       }, (err) => {

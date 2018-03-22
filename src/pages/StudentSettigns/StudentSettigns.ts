@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { App, Events, IonicPage, NavController } from 'ionic-angular';
+import { AlertController, App, Events, IonicPage, NavController} from 'ionic-angular';
 import { SettingsProvider } from './../../providers/settings/settings';
 import { Storage } from "@ionic/storage";
 
@@ -20,7 +20,7 @@ export class StudentSettignsPage {
   fontSize: any;
 
   constructor(public navCtrl: NavController, public app: App, private settings: SettingsProvider,
-              public storage: Storage, public events: Events) {
+              public storage: Storage, public events: Events, public alertCtrl: AlertController) {
     this.storage.get('size').then((val) => {
       this.fontSize = val;
     });
@@ -59,6 +59,17 @@ export class StudentSettignsPage {
     this.events.publish('size', this.fontSize);
     this.storage.set('size', this.fontSize).then(() => {
     });
+  }
+
+  infoToggle() {
+    let alert = this.alertCtrl.create({
+      title: 'Settings Page!',
+      subTitle: '<p>Welcome to the Settings Page!</p>' +
+      '<p>Here you can choose differnt background colour and choose a font size of your choice.</p>' +
+      '<p>Do not forget to log out</p>',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   start() {
