@@ -16,7 +16,7 @@ import {AuthenticationServiceProvider} from "../../providers/authentication-serv
 })
 export class TeachermanagePage {
   responseData: any;
-  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":"", "email":""};
+  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":"", "teacherEmail":""};
 
   public TeacherDetails: any;
 
@@ -36,7 +36,7 @@ export class TeachermanagePage {
     if (this.studentData.username && this.studentData.studentFName && this.studentData.studentSName &&
       this.studentData.studentPassword)
     {
-      this.studentData.email == this.TeacherDetails.email
+      this.studentData.teacherEmail = this.TeacherDetails.email;
       this.authenticationServiceProvider.postData(this.studentData, "teacherManage").then((result) => {
         this.responseData = result;
         console.log(this.responseData);

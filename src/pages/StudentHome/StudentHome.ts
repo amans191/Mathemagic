@@ -26,6 +26,7 @@ export class StudentHomePage {
     this.storage.get('size').then((val) => {
       this.fontSize = val;
     });
+
     events.subscribe('size', (size) => {
       this.fontSize = size;
     });

@@ -37,6 +37,7 @@ export class QuizmakerPage {
   randomNumber = () : number => {
     return Math.floor(Math.random()*(this.MaxNum - this.MinNum))+1;
   }
+
   randomAddOperator = () : string => {
     return this.altAdditionWords[Math.floor(Math.random()*this.altAdditionWords.length)];
   }
