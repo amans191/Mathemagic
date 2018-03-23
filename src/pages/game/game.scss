@@ -137,3 +137,40 @@ page-game {
   }
 
 }
+
+$alert-ios-head-text-align: center;
+$alert-ios-message-text-align: center;
+$alert-md-head-text-align: center;
+$alert-md-message-text-align: center;
+$alert-md-border-radius:	13px;
+
+$alert-button-font-size: 25px;
+$alert-button-font-style: 1px bold;
+
+$alert-md-button-group-padding-start: 8px;
+$alert-md-button-group-justify-content:	center;
+$alert-md-button-group-flex-wrap: wrap-reverse;
+$alert-md-button-flex: 1 1 auto;
+$alert-md-button-margin: 0 auto;
+$alert-md-button-margin-end: 0;
+$alert-md-button-min-width: 50%;
+$alert-md-button-min-height: 44px;
+$alert-md-button-text-color: #32db64;
+$alert-md-button-background-color: transparent;
+$alert-md-button-background-color-activated: #32db64;
+$alert-md-button-border-width: $hairlines-width;
+$alert-md-button-border-style: 1px solid;
+$alert-md-button-border-color: #32db64;
+$alert-md-button-border-radius: 1px;
+$alert-md-button-main-font-weight: bold;
+
+$toast-width:	80%;
+
+$toast-ios-background:	rgba(0, 255, 0, 0.6);
+$toast-ios-border-radius:	.65rem;
+$toast-ios-title-color:	#fff;
+$toast-ios-title-font-size: 2.6rem;
+
+$toast-md-background:	rgba(0, 255, 0, 0.6);
+$toast-md-title-color:	#fff;
+$toast-md-title-font-size:	2.6rem;
