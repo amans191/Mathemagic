@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-let apiUrl = "https://mathemagic95.000webhostapp.com/api/api/"
+let apiUrl = "https://46.101.92.158/PHP-Slim-Restful/api/"
 
 /*
   Generated class for the AuthenticationServiceProvider provider.
