@@ -19,7 +19,7 @@ import {AuthenticationServiceProvider} from "../../providers/authentication-serv
 export class StudentLoginPage {
 
   responseData: any;
-  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":""};
+  studentData = {"username":"", "studentFName":"", "studentSName":"", "studentPassword":"","teacherEmail":"","correctAnswers":"","totalAnswered":""};
   constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
               private toastCtrl: ToastController) {
 

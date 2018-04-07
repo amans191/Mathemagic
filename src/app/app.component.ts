@@ -4,6 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { StartPage } from '../pages/start/start';
+import { StudentprofilePage } from '../pages/studentprofile/studentprofile';
 import { SettingsProvider } from "../providers/settings/settings";
 import { Storage } from "@ionic/storage";
 

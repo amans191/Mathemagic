@@ -17,4 +17,27 @@
 
   <button ion-button (click)="makequiz()">Build a Quiz</button><br>
 
+  <!-- <ion-label>Student Usernames</ion-label>
+  <ion-select [(ngModel)]="studentUsernames.name">
+     <ion-option *ngFor="#student of students" value="{{student.id}}">{{student.username}}</ion-option>
+</ion-select> -->
+
+<ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
+ 
+    <ion-list>
+        <ion-item *ngFor="let student of students" (click)="loadGraphData(student)">
+            {{student.username}}
+        </ion-item>
+    </ion-list>
+
+    <ion-card>
+      <ion-card-header>
+        Student's Result:
+      </ion-card-header>
+      <ion-card-content id="barCanvas">
+        <canvas #barCanvas height="100"
+        width="100"></canvas>
+      </ion-card-content>
+    </ion-card>
+
 </ion-content>

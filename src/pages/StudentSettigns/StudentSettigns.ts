@@ -64,8 +64,9 @@ export class StudentSettignsPage {
   infoToggle() {
     let alert = this.alertCtrl.create({
       title: 'Settings Page!',
-      subTitle: '<p style="position: center">Welcome to the Settings Page!</p>' +
-      '<p>Here you can choose differnt background colour and choose a font size of your choice.</p>',
+      subTitle: '<p>Welcome to the Settings Page!</p>' +
+      '<p>Here you can choose differnt background colour and choose a font size of your choice.</p>' +
+      '<p>Do not forget to log out</p>',
       buttons: ['OK']
     });
     alert.present();

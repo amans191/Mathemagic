@@ -23,4 +23,13 @@
 
   <h2>Welcome to Mathemagic, {{ParentDetails.parentFName + " " + ParentDetails.parentSName}}</h2>
 
+  <ion-card>
+    <ion-card-header>
+      Your Child's Result:
+    </ion-card-header>
+    <ion-card-content id="barCanvas">
+      <canvas #barCanvas height="100"
+      width="100"></canvas>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
