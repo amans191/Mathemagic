@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { Storage  } from '@ionic/storage';
 
 
 /**
@@ -16,10 +17,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class StudentprofilePage {
 
+  fontSize: any;
+
   studentData : any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public events: Events) {
+    this.storage.get('size').then((val) => {
+      this.fontSize = val;
+    });
+
+    events.subscribe('size', (size) => {
+      this.fontSize = size;
+    });
+
     var data = JSON.parse(localStorage.getItem('studentData'));
     this.studentData = data.studentData;
+  }
+
+  ngOnInit() {
+    this.storage.get('size').then((val) => {
+      this.fontSize = val;
+    });
   }
 
   ionViewDidLoad() {
@@ -28,19 +46,19 @@ export class StudentprofilePage {
 
     var trophy2 = document.getElementById('tr2');
     var trophyNotWon2 = document.getElementById('trNW2');
-    
+
     var trophy3 = document.getElementById('tr3');
     var trophyNotWon3 = document.getElementById('trNW3');
-    
+
     var trophy4 = document.getElementById('tr4');
     var trophyNotWon4 = document.getElementById('trNW4');
-    
+
     var trophy5 = document.getElementById('tr5');
     var trophyNotWon5 = document.getElementById('trNW5');
 
     var wonAllTrophies = document.getElementById('wonAll');
     var wonNoTrophy = document.getElementById('wonNone');
-    
+
     console.log('ionViewDidLoad StudentprofilePage');
     if(this.studentData.correctAnswers != null && this.studentData.correctAnswers > 0){
       if(this.studentData.totalAnswered >= 5){

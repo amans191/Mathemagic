@@ -11,12 +11,17 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding id="page">
-  <h2 class="size-{{fontSize}}">Welcome to Mathemagic!</h2>
+<ion-content padding id="page" style="text-align: center;">
+  <h2 class="size-{{fontSize}}"><br>Welcome to Mathemagic!</h2>
 
-  <button ion-button (click)="game()" id="btnMonkey">Monkey Maths</button>
+  <button ion-button (click)="quiz()" id="btnQuiz" style="width: 75%;
+      height: 18%;
+      font-size: 25px;
+      margin-top: 20%;">Quiz</button>
 
-  <button ion-button (click)="quiz()" id="btnQuiz">Quiz</button>
+  <button ion-button (click)="game()" id="btnMonkey" style="width: 75%;
+      height: 18%;
+      font-size: 25px;">Monkey Maths</button>
 
   <div id="quizDetails" hidden="hidden" class="size-{{fontSize}}">
     <div style='margin-top:2%; float:left; width:100%;'>
