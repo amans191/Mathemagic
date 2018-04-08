@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, ToastController} from 'ionic-angular';
+import {AlertController, IonicPage, NavController, ToastController} from 'ionic-angular';
 import {AuthenticationServiceProvider} from "../../providers/authentication-service/authentication-service";
 
 /**
@@ -21,11 +21,23 @@ export class TeachermanagePage {
   public TeacherDetails: any;
 
   constructor(public navCtrl: NavController, public authenticationServiceProvider: AuthenticationServiceProvider,
-              private toastCtrl: ToastController) {
+              private toastCtrl: ToastController, public alertCtrl: AlertController) {
 
     const data = JSON.parse(localStorage.getItem('teacherData'));
     this.TeacherDetails = data.teacherData;
     console.log(this.TeacherDetails);
+  }
+
+  infoToggle() {
+    let alert = this.alertCtrl.create({
+      title: 'Manage Page!',
+      subTitle: '<p>Welcome to the Manage Page!</p>' +
+      '<p>Choose either to Build a Quiz for your students or to view your students\' performance.</p>' +
+      '<p>To build a quiz first select a date on which the quiz will show for your students. Then enter a minimum' +
+      'and maximum number. Select an operator and Publish.</p>',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   ionViewDidLoad() {

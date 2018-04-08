@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import {IonicPage, NavController, NavParams, Events, AlertController} from 'ionic-angular';
 import { Storage  } from '@ionic/storage';
 
 
@@ -21,7 +21,8 @@ export class StudentprofilePage {
 
   studentData : any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public events: Events) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage,
+              public events: Events, public alertCtrl: AlertController) {
     this.storage.get('size').then((val) => {
       this.fontSize = val;
     });
@@ -38,6 +39,17 @@ export class StudentprofilePage {
     this.storage.get('size').then((val) => {
       this.fontSize = val;
     });
+  }
+
+  infoToggle() {
+    let alert = this.alertCtrl.create({
+      title: 'Videos Page!',
+      subTitle: '<p>Welcome to the Profile Page!</p>' +
+      '<p>Try win as many trophies as you can!</p>' +
+      '<p>Good Luck!</p>',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   ionViewDidLoad() {

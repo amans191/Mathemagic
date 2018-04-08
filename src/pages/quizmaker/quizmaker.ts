@@ -24,8 +24,8 @@ export class QuizmakerPage {
   private numOfQuestion : number = 5;
 
   private altAdditionWords       = ['+','Plus','Add'];
-  private altSubtractionWords    = ['-','Subtract','Minus','take away'];
-  private altMultiplicationWords = ['x','Multiply','times'];
+  private altSubtractionWords    = ['-','Subtract','Minus','Take Away'];
+  private altMultiplicationWords = ['x','Multiply','Times'];
   private altDivisionWords       = ['÷','Divide','Divided by','From'];
 
   public MaxNum: number;

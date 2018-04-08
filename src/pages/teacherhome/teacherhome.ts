@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
 import { Data } from '../../providers/data';
 import { QuizmakerPage } from "../quizmaker/quizmaker";
 import { Chart } from 'chart.js';
@@ -28,12 +28,24 @@ export class TeacherhomePage {
   quizMarks: number[] = [];
   quizDate= [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: Data,
-              public authenticationServiceProvider: AuthenticationServiceProvider) {
+              public authenticationServiceProvider: AuthenticationServiceProvider, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TeacherhomePage');
     this.setFilteredItems();
+  }
+
+  infoToggle() {
+    let alert = this.alertCtrl.create({
+      title: 'Home Page!',
+      subTitle: '<p>Welcome to the Home Page!</p>' +
+      '<p>Choose either to Build a Quiz for your students or to view your students\' performance.</p>' +
+      '<p>To build a quiz first select a date on which the quiz will show for your students. Then enter a minimum' +
+      'and maximum number. Select an operator and Publish.</p>',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   makequiz() {
