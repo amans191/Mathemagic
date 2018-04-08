@@ -15,7 +15,9 @@
 
 <ion-content padding id="page">
 
-  <button ion-button (click)="makequiz()">Build a Quiz</button><br>
+  <button ion-button (click)="makequiz()" style="width: 100%">Build a Quiz</button>
+
+  <div padding-top="20px"><hr></div>
 
   <!-- <ion-label>Student Usernames</ion-label>
   <ion-select [(ngModel)]="studentUsernames.name">
@@ -23,7 +25,7 @@
 </ion-select> -->
 
 <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
- 
+
     <ion-list>
         <ion-item *ngFor="let student of students" (click)="loadGraphData(student)">
             {{student.username}}

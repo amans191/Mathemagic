@@ -19,7 +19,7 @@ import {AuthenticationServiceProvider} from "../../providers/authentication-serv
 })
 export class TeacherhomePage {
   @ViewChild('barCanvas') barCanvas;
- 
+
   barChart: any;
   searchTerm: string = '';
   students: any;
@@ -27,7 +27,8 @@ export class TeacherhomePage {
   quizes: any;
   quizMarks: number[] = [];
   quizDate= [];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: Data, public authenticationServiceProvider: AuthenticationServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: Data,
+              public authenticationServiceProvider: AuthenticationServiceProvider) {
   }
 
   ionViewDidLoad() {
@@ -40,7 +41,7 @@ export class TeacherhomePage {
   }
 
   setFilteredItems() {
- 
+
     this.students = this.dataService.filterItems(this.searchTerm);
 }
 
@@ -49,14 +50,14 @@ loadGraphData(student){
     {
       this.authenticationServiceProvider.postData(student, "studentQuizGraph").then((result) => {
         this.responseData = result;
-  
+
         if (this.responseData.quizList)
         {
             this.quizes = this.responseData;
             this.loadGraph(this.quizes);
             //localStorage.setItem('quizList', JSON.stringify(this.quizes));
         }
-  
+
       }, (err) => {
         console.log("Didn't work fool");
       });
@@ -79,7 +80,7 @@ loadGraph(data){
     Object.keys(this.quizes.quizList).forEach(id => {
         let obj = this.quizes.quizList[id];
         this.quizMarks.push(parseInt(obj.obtainedMarks));
-        this.quizDate.push(obj.quizDateTime.substring(0,10));  
+        this.quizDate.push(obj.quizDateTime.substring(0,10));
         console.log(parseInt(obj.obtainedMarks));
     });
     this.quizMarks = this.quizMarks.reverse();
@@ -129,7 +130,7 @@ loadGraph(data){
                 }]
             }
         }
-    
+
     });
 }
 }
