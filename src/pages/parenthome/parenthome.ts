@@ -19,7 +19,7 @@ import {AuthenticationServiceProvider} from "../../providers/authentication-serv
 })
 export class ParenthomePage {
   @ViewChild('barCanvas') barCanvas;
- 
+
   barChart: any;
   public ParentDetails : any;
   students: any;
@@ -85,12 +85,12 @@ loadGraph(data){
   Object.keys(this.quizes.quizList).forEach(id => {
       let obj = this.quizes.quizList[id];
       this.quizMarks.push(parseInt(obj.obtainedMarks));
-      this.quizDate.push(obj.quizDateTime.substring(0,10));  
+      this.quizDate.push(obj.quizDateTime.substring(0,10));
       console.log(parseInt(obj.obtainedMarks));
   });
   this.quizMarks = this.quizMarks.reverse();
-  this.quizDate = this.quizDate.reverse();
-  
+  //this.quizDate = this.quizDate.reverse();
+
     //show graph
     this.barChart = new Chart(this.barCanvas.nativeElement, {
       type: 'bar',
@@ -135,7 +135,7 @@ loadGraph(data){
               }]
           }
       }
-  
+
   });
 }
 }

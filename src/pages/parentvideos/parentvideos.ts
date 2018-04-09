@@ -26,7 +26,7 @@ export class ParentvideosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ParentvideosPage');
     var videoPanel = document.getElementById('video-list');
-      
+
     this.authenticationServiceProvider.postData(this.parentData.parentData, "fetchVideo").then((result) => {
       this.responseData = result;
       console.log(this.responseData);
@@ -44,7 +44,7 @@ export class ParentvideosPage {
               '</ion-item>'+
           '</div> </br>';
             });
-              
+
       }
       else{
         alert('An error occurred please try again!');
@@ -54,6 +54,6 @@ export class ParentvideosPage {
     });
 
     }
-  
+
 
 }
