@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PopoverController } from 'ionic-angular';
-import { PopoverPage } from "../popover/popover";
+import {AlertController, IonicPage, NavController} from 'ionic-angular';
 import { Chart } from 'chart.js';
 import {AuthenticationServiceProvider} from "../../providers/authentication-service/authentication-service";
 
@@ -27,7 +25,8 @@ export class ParenthomePage {
   quizes: any;
   quizMarks: number[] = [];
   quizDate= [];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController,
+
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController,
               public authenticationServiceProvider: AuthenticationServiceProvider) {
     const data = JSON.parse(localStorage.getItem('parentData'));
     this.ParentDetails = data.parentData;
@@ -41,11 +40,14 @@ export class ParenthomePage {
     this.loadGraphData(this.students);
   }
 
-  presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(PopoverPage);
-    popover.present({
-      ev: myEvent
+  infoToggle() {
+    let alert = this.alertCtrl.create({
+      title: 'Home Page!',
+      subTitle: '<p>Welcome to the Home Page!</p>' +
+      '<p>Here you can view your Child\'s progress in the their Daily Quizzes</p>',
+      buttons: ['OK']
     });
+    alert.present();
   }
 
 loadGraphData(student){

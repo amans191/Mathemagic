@@ -1,9 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
+import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Data } from '../../providers/data';
 import { QuizmakerPage } from "../quizmaker/quizmaker";
 import { Chart } from 'chart.js';
-import {AuthenticationServiceProvider} from "../../providers/authentication-service/authentication-service";
+import { AuthenticationServiceProvider } from "../../providers/authentication-service/authentication-service";
 
 /**
  * Generated class for the TeacherhomePage page.
@@ -27,6 +27,8 @@ export class TeacherhomePage {
   quizes: any;
   quizMarks: number[] = [];
   quizDate= [];
+  quizQusetion1 = [];
+  quizAnswer1: number[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: Data,
               public authenticationServiceProvider: AuthenticationServiceProvider, public alertCtrl: AlertController) {
   }
@@ -142,7 +144,6 @@ loadGraph(data){
                 }]
             }
         }
-
     });
 }
 }
