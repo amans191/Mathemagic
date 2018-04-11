@@ -32,9 +32,7 @@ export class TeachermanagePage {
     let alert = this.alertCtrl.create({
       title: 'Manage Page!',
       subTitle: '<p>Welcome to the Manage Page!</p>' +
-      '<p>Choose either to Build a Quiz for your students or to view your students\' performance.</p>' +
-      '<p>To build a quiz first select a date on which the quiz will show for your students. Then enter a minimum' +
-      'and maximum number. Select an operator and Publish.</p>',
+      '<p>Here you can add students.</p>',
       buttons: ['OK']
     });
     alert.present();

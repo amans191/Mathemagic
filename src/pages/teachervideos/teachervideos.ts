@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertController, IonicPage, NavController, NavParams} from 'ionic-angular';
 import { AuthenticationServiceProvider } from "../../providers/authentication-service/authentication-service";
 
 /**
@@ -20,9 +20,20 @@ export class TeachervideosPage {
   teacherData : any;
   responseData : any;
   videoList : any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController,
               public authenticationServiceProvider: AuthenticationServiceProvider) {
     this.teacherData = JSON.parse(localStorage.getItem('teacherData'));
+  }
+
+  infoToggle() {
+    let alert = this.alertCtrl.create({
+      title: 'Videos Page!',
+      subTitle: '<p>Welcome to the Home Page!</p>' +
+      '<p>Here you can add a video for your students to watch.</p>' +
+      '<p>Simply add the URL of a youtube video and give that video a heading.</p>',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   ionViewDidLoad() {

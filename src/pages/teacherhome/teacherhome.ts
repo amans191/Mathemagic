@@ -42,7 +42,7 @@ export class TeacherhomePage {
       title: 'Home Page!',
       subTitle: '<p>Welcome to the Home Page!</p>' +
       '<p>Choose either to Build a Quiz for your students or to view your students\' performance.</p>' +
-      '<p>To build a quiz first select a date on which the quiz will show for your students. Then enter a minimum' +
+      '<p>To build a quiz first select a date on which the quiz will show for your students. Then enter a minimum ' +
       'and maximum number. Select an operator and Publish.</p>',
       buttons: ['OK']
     });
