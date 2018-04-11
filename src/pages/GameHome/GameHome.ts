@@ -189,7 +189,6 @@ export class GameHomePage {
       else {
         if(+ans === this.result) {
           this.userScore++;
-          //Chamar o pulo aqui...
           // this.gameInstance.jumpAround();
           this.presentToast();
           this.show = false;

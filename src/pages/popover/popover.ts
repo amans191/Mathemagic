@@ -17,7 +17,7 @@ import { AlertController } from 'ionic-angular';
   template: `
     <ion-list>
       <button style="font-size: 30px; background-color: transparent" id="info" (click)="infoToggle()">
-        <ion-icon name="information-circle"></ion-icon>
+        <ion-icon name="md-help">Help</ion-icon>
       </button>
       <button ion-item (click)="close()">GitHub Repo</button>
     </ion-list>
@@ -40,10 +40,11 @@ export class PopoverPage {
 
   infoToggle() {
     let alert = this.alertCtrl.create({
-      title: 'Home Page!',
-      subTitle: '<p>Welcome to the Home Page!</p>' +
-      '<p>Choose Either to play a game or to do The Daily Quiz</p>',
-      buttons: ['OK']
+      subTitle: '<p><h3>Welcome to the Mathemagic!</h3></p>' +
+      '<p>The Home page will show your child\'s performance in their previous daily quizzes!</p>' +
+      '<p>The Video page will show a list of videos the teacher has linked for you and your child to watch for ' +
+      'extra help!</p>',
+      buttons: ['Close']
     });
     alert.present();
   }

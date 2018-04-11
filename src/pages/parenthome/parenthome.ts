@@ -27,7 +27,8 @@ export class ParenthomePage {
   quizes: any;
   quizMarks: number[] = [];
   quizDate= [];
-  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController, public authenticationServiceProvider: AuthenticationServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public popoverCtrl: PopoverController,
+              public authenticationServiceProvider: AuthenticationServiceProvider) {
     const data = JSON.parse(localStorage.getItem('parentData'));
     this.ParentDetails = data.parentData;
     this.students = this.ParentDetails;
@@ -89,7 +90,7 @@ loadGraph(data){
       console.log(parseInt(obj.obtainedMarks));
   });
   this.quizMarks = this.quizMarks.reverse();
-  //this.quizDate = this.quizDate.reverse();
+  this.quizDate = this.quizDate.reverse();
 
     //show graph
     this.barChart = new Chart(this.barCanvas.nativeElement, {

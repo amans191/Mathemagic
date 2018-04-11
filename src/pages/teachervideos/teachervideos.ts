@@ -16,11 +16,12 @@ import { AuthenticationServiceProvider } from "../../providers/authentication-se
 })
 export class TeachervideosPage {
 
-  videoData = {"heading":"", "link":"", "teacherEmail":""};  
+  videoData = {"heading":"", "link":"", "teacherEmail":""};
   teacherData : any;
   responseData : any;
   videoList : any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authenticationServiceProvider: AuthenticationServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+              public authenticationServiceProvider: AuthenticationServiceProvider) {
     this.teacherData = JSON.parse(localStorage.getItem('teacherData'));
   }
 
@@ -28,8 +29,8 @@ export class TeachervideosPage {
     console.log('ionViewDidLoad TeachervideosPage');
     var videoPanel = document.getElementById('video-list');
       videoPanel.innerHTML = "";
-      
-      
+
+
     this.authenticationServiceProvider.postData(this.teacherData.teacherData, "fetchVideo").then((result) => {
       this.responseData = result;
       console.log(this.responseData);
@@ -58,7 +59,7 @@ export class TeachervideosPage {
   }
   submitVideo(){
     this.videoData.teacherEmail = this.teacherData.teacherData.email;
-    
+
     if(this.videoData.heading == "" && this.videoData.link == "")
     {
       alert('Enter data in empty field(s)');
@@ -76,7 +77,7 @@ export class TeachervideosPage {
           (<HTMLInputElement>document.getElementById('link')).value = '';
           this.videoList = null;
           this.videoData = null;
-          
+
           //this.navCtrl.setRoot(this.navCtrl.getActive().component);
           this.ionViewDidLoad();
         }
