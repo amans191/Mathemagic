@@ -27,8 +27,7 @@ export class TeacherhomePage {
   quizes: any;
   quizMarks: number[] = [];
   quizDate= [];
-  quizQusetion1 = [];
-  quizAnswer1: number[] = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: Data,
               public authenticationServiceProvider: AuthenticationServiceProvider, public alertCtrl: AlertController) {
   }
