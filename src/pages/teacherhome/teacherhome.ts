@@ -138,12 +138,12 @@ loadGraph(data){
               var obj = quizListData.filter(function (x) { return x.quizDateTime.includes(label) })[0];
 
               let alert = alertCtrl.create({
-                subTitle: `Result for ${label}`,
-                message: `1: ${obj.ques1} <br/> Ans: ${obj.ans1}<br/><br/>
+                subTitle: `<span style="font-size: 20px">Result for ${label}</span>`,
+                message: `<span style="font-size: 20px">1: ${obj.ques1} <br/> Ans: ${obj.ans1}<br/><br/>
                                    2: ${obj.ques2} <br/> Ans: ${obj.ans2}<br/><br/>
                                    3: ${obj.ques3} <br/> Ans: ${obj.ans3}<br/><br/>
                                    4: ${obj.ques4} <br/> Ans: ${obj.ans4}<br/><br/>
-                                   5: ${obj.ques5} <br/> Ans: ${obj.ans5}<br/><br/>`,
+                                   5: ${obj.ques5} <br/> Ans: ${obj.ans5}<br/><br/></span>`,
                 buttons: ['OK']
               });
               alert.present();
