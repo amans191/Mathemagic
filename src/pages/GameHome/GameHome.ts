@@ -144,7 +144,7 @@ export class GameHomePage {
 
   generateQuestion() {
     this.show = true;
-    this.reply = ''; // Limpa os dados no input, se houver
+    this.reply = '';
     this.score = `Hits:  ${this.userScore} of ${this.totalQuestions}`;
     // level.innerHTML = `Level ${userLevel}`;
     this.setOperatorsAndRange();
@@ -221,7 +221,7 @@ export class GameHomePage {
         if(currentLevel !== this.userLevel) {
           blur();
           let alert = this.alertCtrl.create({
-            title: `<span class="certa"> Really nice! </span>`,
+            title: `<span class="certa">Well Done! </span>`,
             message: `<span class="correct_ans"> You reached Level <span class="certa">${this.userLevel}</span>!!!</span>`,
             buttons: [
               {

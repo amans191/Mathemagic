@@ -35,7 +35,7 @@
 
     <ion-list>
         <ion-item *ngFor="let student of students" (click)="loadGraphData(student)">
-            {{student.username}}
+            {{student.username}} (StudentID: {{student.studentID}})
         </ion-item>
     </ion-list>
 
