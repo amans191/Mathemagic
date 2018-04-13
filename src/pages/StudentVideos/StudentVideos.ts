@@ -56,14 +56,13 @@ export class StudentVideosPage {
         Object.keys(this.videoList).forEach(id => {
           let obj = this.videoList[id];
           videoPanel.innerHTML += '<div class="card">'+
-              '<ion-item><span> ' + obj.heading + '</span>' +
-                  '<div class="video-container">'+
-                      '<iframe src="'+ obj.link+'" frameborder="0" width="560" height="315"></iframe>'+
-                  '</div>'+
-              '</ion-item>'+
-          '</div> </br>';
-            });
-
+            '<ion-item> <span>' + obj.heading + '</span>'+
+            '<div class="video-container">'+
+            '<iframe src="'+ obj.link+'" frameborder="0" width="560" height="315"></iframe>'+
+            '</div>'+
+            '</ion-item>'+
+            '</div> </br>';
+        });
       }
       else{
         alert('An error occurred please try again!');
