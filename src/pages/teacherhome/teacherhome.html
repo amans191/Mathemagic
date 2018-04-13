@@ -26,11 +26,6 @@
 
   <div padding-top="20px"><hr></div>
 
-  <!-- <ion-label>Student Usernames</ion-label>
-  <ion-select [(ngModel)]="studentUsernames.name">
-     <ion-option *ngFor="#student of students" value="{{student.id}}">{{student.username}}</ion-option>
-</ion-select> -->
-
 <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
 
     <ion-list>
