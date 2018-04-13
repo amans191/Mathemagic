@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
+import {AlertController, IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 import { Data } from '../../providers/data';
 import { QuizmakerPage } from "../quizmaker/quizmaker";
 import { Chart } from 'chart.js';
@@ -29,7 +29,8 @@ export class TeacherhomePage {
   quizDate= [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: Data,
-              public authenticationServiceProvider: AuthenticationServiceProvider, public alertCtrl: AlertController) {
+              public authenticationServiceProvider: AuthenticationServiceProvider, public alertCtrl: AlertController,
+              public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
@@ -99,6 +100,9 @@ loadGraph(data){
     this.quizMarks = this.quizMarks.reverse();
     this.quizDate = this.quizDate.reverse();
 
+    var quizListData = this.quizes.quizList;
+    var alertCtrl = this.alertCtrl;
+
       //show graph
       this.barChart = new Chart(this.barCanvas.nativeElement, {
         type: 'bar',
@@ -127,21 +131,42 @@ loadGraph(data){
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                      min:0,
-                      max:5,
-                      autoSkip: false,
-                        beginAtZero:true
-                    }
-                }],
-                xAxes:[{
-                    ticks:{
-                        autoSkip:false,
-                    }
-                }]
+
+          onClick: function (e) {
+            try {
+              var label = this.getElementAtEvent(e)[0]._chart.active[0]._model.label;
+              var obj = quizListData.filter(function (x) { return x.quizDateTime.includes(label) })[0];
+
+              let alert = alertCtrl.create({
+                subTitle: `Result for ${label}`,
+                message: `1: ${obj.ques1} <br/> Ans: ${obj.ans1}<br/><br/>
+                                   2: ${obj.ques2} <br/> Ans: ${obj.ans2}<br/><br/>
+                                   3: ${obj.ques3} <br/> Ans: ${obj.ans3}<br/><br/>
+                                   4: ${obj.ques4} <br/> Ans: ${obj.ans4}<br/><br/>
+                                   5: ${obj.ques5} <br/> Ans: ${obj.ans5}<br/><br/>`,
+                buttons: ['OK']
+              });
+              alert.present();
+            } catch (error) {
+              console.log('no data from chart, either clicked on empty place or bar does not have data.')
             }
+          },
+
+          scales: {
+            yAxes: [{
+              ticks: {
+                min:0,
+                max:5,
+                autoSkip: false,
+                beginAtZero:true
+              }
+            }],
+            xAxes:[{
+              ticks:{
+                autoSkip:false,
+              }
+            }]
+          }
         }
     });
 }
